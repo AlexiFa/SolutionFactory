@@ -1,21 +1,32 @@
 
 <template>
   
-  <div>
-    <h1>Stade d'avancement</h1>
-    <div class="progress" >
+  <div style="border: 1px solid black; display: grid; background-color:#588B8B;">
+
+    <h3>Stade d'avancement: </h3>
+    <div class="progress" style="width: 50%; margin-left: auto; margin-right: auto;">
       <div class="progress-bar progress-bar-consulted" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="75" :style="{ width: progress1 + '%' }">Consulté</div>
       <div class="progress-bar progress-bar-send" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="75" :style="{ width: progress2 + '%' }">Envoyé</div>
       <div class="progress-bar progress-bar-done" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="75" :style="{ width: progress3 + '%' }">Terminé</div>
     </div>
 
-    <button @click="Consulted">Consulté</button>
-    <button @click="Send">Envoyé</button>
-    <button @click="Done">Terminé</button>
+    <div style="padding-top: 2%" >
+        <button type="button" class="btn btn-dark btn-sm" @click="Consulted">Consulté</button>
+        <button type="button" class="btn btn-dark btn-sm" @click="Send">Envoyé</button>
+        <button type="button" class="btn btn-dark btn-sm" @click="Done">Terminé</button>
+    </div>
+
+    <div class="mb-3" style="padding-top: 5%; width: 30%; display: block; margin-left: auto; margin-right: auto;">
+      
+      <textarea class="form-control"  rows="10" placeholder="Chat" style="border: 4px solid #2A2D34;"></textarea>
+      <button type="button" class="btn btn-outline-dark">Envoyer</button>
+      
+    </div>
+
   </div>
 
   
-  
+
 </template>
 
 <script>
