@@ -19,6 +19,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
+
     path: '/login',
     name: 'login',
     component: LoginView
@@ -34,6 +35,7 @@ const routes = [
     name: 'CDossier',
     component: CDossier
   }
+  
 ]
 
 const router = createRouter({

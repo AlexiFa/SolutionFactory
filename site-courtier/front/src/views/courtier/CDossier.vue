@@ -1,17 +1,10 @@
-
 <template>
   <div>
     <DCard>
       
     </DCard>
-
-    
-
-    
   </div>
-
-
-</template>>
+</template>
 
 <script>
 // @ is an alias to /src
@@ -23,7 +16,6 @@ export default
   components: {
     DCard
     
-  }
+  },
 }
-
 </script>

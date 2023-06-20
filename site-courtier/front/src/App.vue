@@ -9,7 +9,7 @@
     <router-link to="/register">Register</router-link> |
     <router-link to="/CDossier">Dossier Courtier</router-link>
   </nav>
-  <router-view/>
+  <router-view/> 
 </template>
 
 <style>
@@ -22,7 +22,7 @@
 }
 
 nav {
-  padding: 30px;
+  padding: 40px;
 }
 
 nav a {
