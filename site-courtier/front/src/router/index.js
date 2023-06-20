@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import CDossier from '../views/courtier/CDossier.vue'
+import ClientForm from '../views/user/ClientForm.vue'
 
 const routes = [
   {
@@ -19,6 +20,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
+
     path: '/login',
     name: 'login',
     component: LoginView
@@ -33,7 +35,13 @@ const routes = [
     path: '/CDossier',
     name: 'CDossier',
     component: CDossier
+  },
+  {
+    path: '/ClientForm',
+    name: 'ClientForm',
+    component: ClientForm
   }
+  
 ]
 
 const router = createRouter({

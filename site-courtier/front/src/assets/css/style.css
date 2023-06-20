@@ -4,11 +4,14 @@ div{
 .mar{
     margin-bottom: 10%;
 }
-#login{
+.mar2{
+    margin-bottom: 3.34%;
+}
+/*body{
     background-image: url(../Login.png);
     background-repeat: no-repeat;
     background-size: cover;
-}
+}*/
 /*.ellipse1{
     border-radius: 50%;
     width: 50%;
