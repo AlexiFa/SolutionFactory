@@ -1,15 +1,31 @@
 <template>
   <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">-->  
   
-  <nav>
+  <!-- <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/login">Login</router-link> |
     <router-link to="/register">Register</router-link> |
     <router-link to="/CDossier">Dossier Courtier</router-link>
   </nav>
-  <router-view/>
+  <router-view/> -->
+  <div>
+    <TopHeader />
+
+  </div>
 </template>
+
+<script>
+// @ is an alias to /src
+import TopHeader from '@/components/common/TopHeader.vue';
+
+export default {
+  components: {
+    TopHeader
+  }
+}
+// @ is an alias to /src
+</script>
 
 <style>
 #app {
