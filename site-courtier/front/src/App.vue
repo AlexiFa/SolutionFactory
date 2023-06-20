@@ -1,14 +1,30 @@
 <template>
   
-  <nav>
+  <!-- <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/login">Login</router-link> |
     <router-link to="/register">Register</router-link> |
     <router-link to="/CDossier">Dossier Courtier</router-link>
   </nav>
-  <router-view/> 
+  <router-view/> -->
+  <div>
+    <TopHeader />
+
+  </div>
 </template>
+
+<script>
+// @ is an alias to /src
+import TopHeader from '@/components/common/TopHeader.vue';
+
+export default {
+  components: {
+    TopHeader
+  }
+}
+// @ is an alias to /src
+</script>
 
 <style>
 #app {
