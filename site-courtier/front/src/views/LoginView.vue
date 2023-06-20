@@ -1,6 +1,7 @@
 <template>
     <!--<div class="ellipse1"></div>
     <div class="ellipse2"></div>-->
+    <div id="login" style="background-image: url($backgroundImageUrl);background-size: cover;">
     <div class="container card" style="padding: 1%;background-color: #2A2D34;">
         <div class="row">
         <div class="container col d-flex" style="margin: 1%;">
@@ -30,4 +31,16 @@
         </div>
         </div>
     </div>
+    </div>
 </template>
+
+<script>
+export default {
+    name: 'LoginView',
+    data() {
+        return {
+            backgroundImageUrl: 'Login.png'
+        }
+    }
+}
+</script>
