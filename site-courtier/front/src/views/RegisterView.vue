@@ -36,6 +36,7 @@
                 <button type="submit" class="btn btn-primary fs-2" style="background-color: #E9C46A;border-color: #588B8B;color: black;">Sign up</button>
             </div>
         </form>
+        <router-link to="/login" style="margin-top: 3%;color: black;">already have an account ?</router-link>
         </div>
         <div class="container col d-flex" style="margin: 1%;">
             <img src="../assets/logo.png" alt="logo">

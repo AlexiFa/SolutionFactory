@@ -27,6 +27,7 @@
                     <button type="submit" class="btn btn-primary fs-2" style="background-color: #E9C46A;border-color: #588B8B;color: black;">Sign in</button>
                 </div>
             </form>
+            <router-link to="/register" style="margin-top: 3%;color: black;">Register</router-link>
         </div>
         </div>
     </div>
