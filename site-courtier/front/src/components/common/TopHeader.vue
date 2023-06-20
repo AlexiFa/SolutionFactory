@@ -19,13 +19,13 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Dossier</a></li>
-            <li><a class="dropdown-item" href="#"></a>1</li>
+            <li><router-link to="/CDashboard" class="dropdown-item" >Dashboard</router-link></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <router-link to="/register" class="nav-link disabled">Register</router-link>
+          <router-link to="/register" class="nav-link disabled">Account</router-link>
         </li>
       </ul>
       <form class="d-flex" role="search">
