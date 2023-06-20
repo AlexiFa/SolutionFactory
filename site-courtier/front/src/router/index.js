@@ -4,6 +4,7 @@ import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import CDossier from '../views/courtier/CDossier.vue'
 import ClientForm from '../views/user/ClientForm.vue'
+import CDashboard from '../views/courtier/CDashboard.vue'
 
 const routes = [
   {
@@ -40,6 +41,11 @@ const routes = [
     path: '/ClientForm',
     name: 'ClientForm',
     component: ClientForm
+  },
+  {
+    path: '/CDashboard',
+    name: 'CDashboard',
+    component: CDashboard
   }
   
 ]
