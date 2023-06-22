@@ -143,26 +143,9 @@ a {
   color: #42b983;
 }
 
-/* *{
-  background-color: rgb(254, 231, 190);
-} */
-
-#presentation{
-
-}
-
-#text{
-
-}
 
 #imgLogo{
   width: 200px;
   height: 200px;
 }
-
-
-
-
-
-
 </style>
