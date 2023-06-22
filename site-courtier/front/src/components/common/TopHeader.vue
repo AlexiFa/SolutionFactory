@@ -25,7 +25,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <router-link to="/register" class="nav-link disabled">Account</router-link>
+          <router-link to="/ManageAccount" class="nav-link">Account</router-link>
         </li>
       </ul>
       <form class="d-flex" role="search">
