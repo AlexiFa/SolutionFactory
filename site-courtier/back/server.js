@@ -1,19 +1,17 @@
 import express from 'express';
-import {envs, Client} from 'stytch';
+//import stythc
+// import {envs, Client} from 'stytch';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import { json } from 'sequelize';
+import bodyParser from "body-parser";
 
 dotenv.config()
 
-// const express = require("express")
-
 const app = express()
-
-const client = new Client({
-    project_id: process.env.PROJECT_ID,
-    secret: process.env.SECRET,
-    env: envs.test
-})
+app.use(cors());
+// app.use(express.json());
+app.use(bodyParser.json())
 
 
 
@@ -21,9 +19,22 @@ app.listen(3000, () =>{
     console.log("server has start")
 })
 
-app.use(cors());
-app.use(express.json());
 
+app.post('/register', (req,res) => {
+    res.send({
+        message: `Hello ${req.body.email}`
+        
+    })
+})
+
+app.get('/status', (req, res) => {
+    res.send({
+        message: `Hello`
+    })
+})
+
+
+//stych
 // app.post('/register', async (req, res) => {
 //     const{ email, password} = req.body;
 
@@ -39,4 +50,10 @@ app.use(express.json());
 //         })
 //     }
 
+// })
+
+// const client = new Client({
+//     project_id: process.env.PROJECT_ID,
+//     secret: process.env.SECRET,
+//     env: envs.test
 // })
