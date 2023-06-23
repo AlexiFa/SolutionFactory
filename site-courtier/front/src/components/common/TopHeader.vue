@@ -18,7 +18,7 @@
             Dossier
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Dossier</a></li>
+            <li><router-link to="/ClientForm" class="dropdown-item">Nouveau Dossier</router-link></li>
             <li><router-link to="/CDashboard" class="dropdown-item" >Dashboard</router-link></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>

@@ -52,7 +52,8 @@ const routes = [
     path: '/ManageAccount',
     name: 'ManageAccount',
     component: ManageAccount
-  }
+  },
+  
   
 ]
 
