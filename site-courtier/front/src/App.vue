@@ -12,16 +12,20 @@
   <div>
     <TopHeader />
 
+
+    <MyFooter />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import TopHeader from '@/components/common/TopHeader.vue';
+import MyFooter from '@/components/common/MyFooter.vue';
 
 export default {
   components: {
-    TopHeader
+    TopHeader,
+    MyFooter
   }
 }
 // @ is an alias to /src
