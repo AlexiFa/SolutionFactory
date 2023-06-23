@@ -24,19 +24,19 @@ app.listen(3000, () =>{
 app.use(cors());
 app.use(express.json());
 
-app.post('/register', async (req, res) => {
-    const{ email, password} = req.body;
+// app.post('/register', async (req, res) => {
+//     const{ email, password} = req.body;
 
-    try{
-        const resp = await client.passwords.create({
-            email,
-            password,
-            session_duration_minutes: 60
-        })
+//     try{
+//         const resp = await client.passwords.create({
+//             email,
+//             password,
+//             session_duration_minutes: 60
+//         })
 
-        res.jason({
-            success: 
-        })
-    }
+//         res.jason({
+//             success: 
+//         })
+//     }
 
-})
+// })
