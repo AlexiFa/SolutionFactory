@@ -1,14 +1,13 @@
 <template>
-    <div style >
-    <div style="display: flex;">
-        <div>
-            <DCardSimple></DCardSimple>
-        </div>
-        <div>
-            <DCardDossier></DCardDossier>
-        </div>
-        
-    </div>
+    <div style="background-color: #588B8B;padding: 5%;" >
+      <div name="Dossier" style="display: flex; border : 1px solid black;">
+          <div style="width:20%;">
+              <DCardSimple></DCardSimple>
+          </div>
+          <div style="width:60%;">
+              <DCardDossier></DCardDossier>
+          </div>   
+      </div>
     </div>
 </template>
   
