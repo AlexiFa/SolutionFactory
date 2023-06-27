@@ -125,27 +125,29 @@ app.post('/authenticate', async (req, res) => {
 
 app.post('/logout', async (req, res) => {
     const{ session_token} = req.body;
-
-    try{
-        await client.sessions.revoke({
-            session_token
-        })
-
+  
+    try {
+      await client.sessions.revoke({session_token});
+      res.json({success: true, message: 'Succesfuly log out ',});
+    } catch (err) {
+      console.log(err);
+      // Asegúrate de que el cliente borra el token de sesión inválido.
+      if (err.error_message === 'No session found') {
         res.json({
-            success: true,
-            message: 'Succesfuly log out ',
-        })
-    }catch (err) {
-        console.log(err);
-
+          success: false,
+          message: err.error_message,
+          err: err,
+          clearToken: true, // Agrega una bandera para que el cliente sepa que debe borrar el token.
+        });
+      } else {
         res.json({
-            success: false,
-            messgae: err.error_message,
-            err: err
-        })
+          success: false,
+          message: err.error_message,
+          err: err
+        });
+      }
     }
-
-})
+  });
 
 app.listen(3000, () =>{
     console.log("server has start on port 3000")

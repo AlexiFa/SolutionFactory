@@ -1,3 +1,40 @@
+<script setup>
+import { useRouter } from 'vue-router';
+import { ref, watch } from 'vue';
+// import { inject } from 'vue';
+
+const router = useRouter()
+// const isLoggedIn = inject('isLoggedIn')
+const isLoggedIn = ref(!!localStorage.getItem('token'));
+
+watch(isLoggedIn, (newValue, oldValue) => {
+  // Redirigir al usuario a la misma página para forzar una actualización de la vista.
+  router.push(router.currentRoute.value);
+});
+
+const Logout = async () =>{
+  const res = await fetch('http://localhost:3000/logout', {
+    method: 'POST',
+    headers: {
+      'Content-Type' : 'application/json'
+    },
+    body: JSON.stringify({
+      session_token: localStorage.getItem('token')
+    })
+  }).then(res => res.json())
+
+    if (res.success || res.clearToken) {
+      localStorage.removeItem('token')
+      isLoggedIn.value = false
+      router.push('/')
+    } else {
+      alert(res.message)
+    }
+
+}
+
+</script>
+
 <template>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -7,7 +44,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
+        <li class="nav-item" v-if="!isLoggedIn">
           <router-link to="/login" class="nav-link active" aria-current="page">Login</router-link>
         </li>
         <li class="nav-item">
@@ -27,6 +64,9 @@
         <li class="nav-item">
           <router-link to="/ManageAccount" class="nav-link">Account</router-link>
         </li>
+        <li class="nav-item" v-if="isLoggedIn">
+          <button @click="Logout"><router-link to="/login" class="nav-link active" aria-current="page">Logout</router-link></button>
+        </li>
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -41,8 +81,10 @@
 
 <script>
 
+
 export default {
-    name: 'TopHeader'
+    name: 'TopHeader',
+
 }
 
 </script>

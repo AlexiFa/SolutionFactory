@@ -1,19 +1,19 @@
 <script setup>
-
-import {ref} from 'vue' 
+import { ref, provide } from 'vue' 
 import { useRouter } from 'vue-router';
 
 const router = useRouter()
 
 const email = ref('')
 const password = ref('')
+const isLoggedIn = ref(!!localStorage.getItem('token')) // Esto verificará el estado de inicio de sesión al cargar el componente
+
+provide('isLoggedIn', isLoggedIn); // Esta línea proporciona la variable a todos los componentes hijos
 
 const Login = async () => {
     if (!email.value || !password.value){
         return alert('Please fill in all fields')
     }
-
-
 
     const res  = await fetch('http://localhost:3000/login', {
         method: 'POST',
@@ -27,6 +27,7 @@ const Login = async () => {
     }).then(res => res.json())
     if (res.success) {
         localStorage.setItem('token', res.token)
+        isLoggedIn.value = true; // Esto cambiará el estado de inicio de sesión
         router.push('/')
     } else{
         alert(res.message)
@@ -68,3 +69,17 @@ const Login = async () => {
         </div>
     </div>
 </template>
+<!-- 
+<script>
+import { inject } from 'vue';
+import { useRouter } from 'vue-router';
+
+export default {
+  setup() {
+    const isLoggedIn = inject('isLoggedIn');
+    const router = useRouter()
+    return { isLoggedIn };
+  },
+
+}
+</script> -->
