@@ -62,20 +62,21 @@ const Register = async () => {
             </div> -->
             <div class="col-12 mar2">
                 <div class="form-floating">
-                    <input type="email" v-model="email" class="form-control" id="inputEmailLG" placeholder="Email">
+                    <input type="email" v-model="email" class="form-control" id="inputEmailRG" placeholder="Email">
                     <label for="inputEmailLG">Email</label>
                 </div>
             </div>
             <div class="col-12 mar2">
                 <div class="form-floating">
-                    <input type="password" v-model="password" class="form-control" id="inputPasswordLG" placeholder="*************">
+                    <input type="password" v-model="password" class="form-control" id="inputPasswordRG" placeholder="*************">
                     <label for="inputPassword">Password</label>
+                    <i class="bi bi-eye-slash" id="togglePassword" style="cursor: pointer;"></i>
                 </div>
             </div>
             <div class="col-12 mar2">
                 <div class="form-floating">
-                    <input type="password" v-model="conf_password" class="form-control" id="inputPasswordLG" placeholder="*************">
-                    <label for="inputPassword">Confirm Password</label>
+                    <input type="password" v-model="conf_password" class="form-control" id="inputConfirmPasswordRG" placeholder="*************">
+                    <label for="inputConfirmPassword">Confirm Password</label>
                 </div>
             </div>
             <div class="col-12">
@@ -90,3 +91,18 @@ const Register = async () => {
         </div>
     </div>
 </template>
+<!--<script>
+const togglePassword = document
+            .querySelector('#togglePassword');
+        const inputPassword = document.querySelector('#inputPasswordRG');
+        togglePassword.addEventListener('click', () => {
+            // Toggle the type attribute using
+            // getAttribure() method
+            const type = inputPassword
+                .getAttribute('type') === 'password' ?
+                'text' : 'password';
+            inputPassword.setAttribute('type', type);
+            // Toggle the eye and bi-eye icon
+            this.classList.toggle('bi-eye');
+        });
+</script>-->
