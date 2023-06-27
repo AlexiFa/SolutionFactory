@@ -1,5 +1,3 @@
-#généré avec looping
-
 CREATE TABLE Clients(
    id_Client INT AUTO_INCREMENT,
    nom VARCHAR(50),
@@ -30,7 +28,10 @@ CREATE TABLE Dossier(
 
 CREATE TABLE Documents(
    id_Documents INT AUTO_INCREMENT,
-   documentPath VARCHAR(200),
+   file_name VARCHAR(255),
+   file_size VARCHAR(50),
+   file_type VARCHAR(50),
+   file_data BLOB,
    Id_Dossier INT NOT NULL,
    PRIMARY KEY(id_Documents),
    FOREIGN KEY(Id_Dossier) REFERENCES Dossier(Id_Dossier)
