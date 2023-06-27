@@ -38,7 +38,7 @@
         </form>
         <router-link to="/login" style="margin-top: 3%;color: black;">already have an account ?</router-link>
         </div>
-        <div class="container col d-flex" style="margin: 1%;">
+        <div class="container col d-flex flex-column justify-content-center" style="margin: 1%;">
             <img src="../assets/logo.png" alt="logo">
         </div>
         </div>

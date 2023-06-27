@@ -16,7 +16,7 @@ app.use(bodyParser.json())
 
 
 app.listen(3000, () =>{
-    console.log("server has start")
+    console.log("server has start on port 3000")
 })
 
 

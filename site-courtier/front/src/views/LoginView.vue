@@ -3,7 +3,7 @@
     <div class="ellipse2"></div>-->
     <div class="container card" style="padding: 1%;background-color: #2A2D34;">
         <div class="row">
-        <div class="container col d-flex" style="margin: 1%;">
+        <div class="container col d-flex flex-column justify-content-center" style="margin: 1%;">
             <img src="../assets/logo.png" alt="logo">
         </div>
         <div class="container card col" style="padding: 2%;width: 40%;background-color: #588B8B;margin: 1%;">

@@ -5,7 +5,7 @@
         <h1 id="titre">{{ msg }}</h1>
       </div>
       <div class="col">
-        <img id="imgLogo" src="../assets/star.png" alt="Logo OpticGestion" >
+        <img id="imgLogo" src="../assets/logoFull.png" alt="Logo OpticGestion" style="width: 100%;height: fit-content;">
       </div>
     </div>
     <br><br><br>
