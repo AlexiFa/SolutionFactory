@@ -11,7 +11,10 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/about',
@@ -58,35 +61,29 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes
 })
 
-// router.beforeEach(async (to, from, next) => {
-//   if (to.matched.some(record => record.meta.requiresAuth)){
-//     //Authentification check
-//     const token = localStorage.getItem('token')
+router.beforeEach(async (to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)){
+    //Authentification check
+    const token = localStorage.getItem('token')
 
-//     if (token) {
-//       return next()
-//     }
-//     return next('/login')
-//   }
+    if (token) {
+      return next()
+    }
+    return next('/login')
+  }
 
-//   next()
-// })
+  next()
+})
 
 // router.beforeEach((to, from, next) => {
-//   document.title = to.meta.title;
-//   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
-//   const admin = store.state.CurrentUser.admin;
-//   if (requiresAuth && !admin) {
-//     next("/error/401");
-//   } else if (requiresAuth && admin) {
-//     next();
-//   } else {
-//     next();
+//   if (to.matched.some(record => record.meta.requiresAuth)){
+//     //Authentification check
+//     const
 //   }
-// });
+// })
 
 export default router
