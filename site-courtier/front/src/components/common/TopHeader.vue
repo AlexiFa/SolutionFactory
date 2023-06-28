@@ -78,7 +78,8 @@ const handleLogout = async () => {
           <router-link to="/ManageAccount" class="nav-link">Account</router-link>
         </li>
         <li class="nav-item" v-if="isLoggedIn">
-          <button @click="handleLogout"><router-link to="/login" class="nav-link active" aria-current="page">Logout</router-link></button>
+          <!-- Rajouter du css -->
+          <button @click="handleLogout"></button>
         </li>
       </ul>
       <form class="d-flex" role="search">
