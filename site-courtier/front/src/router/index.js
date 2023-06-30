@@ -7,6 +7,7 @@ import ClientForm from '../views/user/ClientForm.vue'
 import CDashboard from '../views/courtier/CDashboard.vue'
 import UDashboard from '../views/user/UDashboard.vue'
 import ManageAccount from '../components/ManageAccount.vue'
+import UDossier from '../views/user/UDossier.vue'
 
 const routes = [
   {
@@ -53,6 +54,11 @@ const routes = [
     component: CDashboard
   },
   {
+    path:"/UDossier",
+    name:"UDossier",
+    component: UDossier
+  },
+  {
     path: '/UDashboard',
     name: 'UDashboard',
     component: UDashboard
@@ -62,6 +68,7 @@ const routes = [
     name: 'ManageAccount',
     component: ManageAccount
   },
+  
   
   
 ]

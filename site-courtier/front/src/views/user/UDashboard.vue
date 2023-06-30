@@ -5,19 +5,19 @@
         </div>
         <!-- modele card dossier du point de vue client -->
         <div name="Dossier-Client" class="dossier-client">
-            <div class="dossier-details">
+            <div class="btn dossier-details" role="button" onclick="window.location.href='/UDossier'">
             <div style="width:55%;">
                 <DCardClient></DCardClient>
             </div> 
             <!-- cette carte ci-dessous est le futur-bouton vers le dossier detaillé-->
             <div style="width: 45%;">
-                <DCardContent></DCardContent>
+               <DCardContent></DCardContent>
             </div>
             </div>
             <div style="width:25%;">
                 <DCardSuivi></DCardSuivi>
             </div>
-        </div>
+            </div>
     </div>
 </template>
 <style scoped>
@@ -38,6 +38,11 @@
     display: flex;
     flex-direction: row;
     align-items: stretch;
+    background-color:white;
+    border:3px solid black;
+    border-radius: 20px;
+  }
+  .dossier-details:hover{
     background-color:white;
     border:3px solid black;
     border-radius: 20px;
