@@ -1,15 +1,16 @@
 <template>
     <div style="background-color: #588B8B;padding: 5%;" >
+      <!-- modele card dossier du point de vue courtier -->
       <div name="Dossier-Client" class="dossier-client">
           <div class="dossier-details">
-            <div style="width:100%;">
+            <div style="width:60%;">
               <DCardClient></DCardClient>
             </div> 
-            <div style="width: 100%;">
+            <div style="width: 40%;">
               <DCardContent></DCardContent>
             </div>
           </div>
-          <div style="width:35%;">
+          <div style="width:25%;">
               <DCardSuivi></DCardSuivi>
           </div>
       </div>
@@ -20,16 +21,22 @@
     display: flex; 
     align-items: center;
     justify-content: space-between; 
-    height: 125px;
+    height: 150px;
     background: white; 
     border: 2px solid black;
     border-radius: 20px;
+    margin-bottom: 5%;
   }
   .dossier-details{
-    width: 65%;
+    width: 75%;
+    height: 175%;
+    padding: 0% 2%;
     display: flex;
     flex-direction: row;
-    border:2px solid black;border-radius: 20px;
+    align-items: stretch;
+    background-color:white;
+    border:2px solid black;
+    border-radius: 20px;
   }
 </style>
 
