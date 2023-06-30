@@ -38,10 +38,9 @@ const handleLogout = async () => {
             Client Dashboard
           </a>
           <ul class="dropdown-menu">
-            <li><router-link to="/ClientForm" class="dropdown-item">Nouveau Dossier</router-link></li>
             <li><router-link to="/UDashboard" class="dropdown-item" >Dossiers en Cours</router-link></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><router-link to="/ClientForm" class="dropdown-item">Nouveau Dossier</router-link></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -61,7 +60,14 @@ const handleLogout = async () => {
 </nav>
 <router-view></router-view>
 </template>
-
+<style scoped >
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	/* .navbar .nav-item:hover .nav-link{} */
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}	
+</style>
 
 <script>
 
