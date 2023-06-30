@@ -35,11 +35,11 @@ const handleLogout = async () => {
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dossier
+            Client Dashboard
           </a>
           <ul class="dropdown-menu">
             <li><router-link to="/ClientForm" class="dropdown-item">Nouveau Dossier</router-link></li>
-            <li><router-link to="/CDashboard" class="dropdown-item" >Dashboard</router-link></li>
+            <li><router-link to="/CDashboard" class="dropdown-item" >Dossiers en Cours</router-link></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
