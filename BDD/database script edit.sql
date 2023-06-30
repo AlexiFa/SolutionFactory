@@ -1,3 +1,8 @@
+CREATE SCHEMA IF NOT EXISTS `courtier` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+USE `courtier` ;
+
+
+DROP TABLE IF EXISTS `courtier`.`Clients` ;
 CREATE TABLE Clients(
    id_Client VARCHAR(255),
    nom VARCHAR(50),
@@ -10,6 +15,7 @@ CREATE TABLE Clients(
    PRIMARY KEY(id_Client)
 );
 
+DROP TABLE IF EXISTS `courtier`.`Messages` ;
 CREATE TABLE Messages(
    id_Message INT AUTO_INCREMENT,
    message VARCHAR(50),
@@ -19,6 +25,7 @@ CREATE TABLE Messages(
    FOREIGN KEY(id_Client) REFERENCES Clients(id_Client)
 );
 
+DROP TABLE IF EXISTS `courtier`.`Dossier` ;
 CREATE TABLE Dossier(
    Id_Dossier INT AUTO_INCREMENT,
    adresse VARCHAR(255),
@@ -32,6 +39,7 @@ CREATE TABLE Dossier(
    FOREIGN KEY(id_Client) REFERENCES Clients(id_Client)
 );
 
+DROP TABLE IF EXISTS `courtier`.`Documents` ;
 CREATE TABLE Documents(
    id_Documents INT AUTO_INCREMENT,
    file_name VARCHAR(255),
@@ -42,3 +50,16 @@ CREATE TABLE Documents(
    PRIMARY KEY(id_Documents),
    FOREIGN KEY(Id_Dossier) REFERENCES Dossier(Id_Dossier)
 );
+
+
+DELIMITER $$
+
+USE `courtier`$$
+DROP TRIGGER IF EXISTS `courtier`.`courtier_BEFORE_INSERT` $$
+USE `courtier`$$
+CREATE TRIGGER `courtier`.`courtier_BEFORE_INSERT`
+BEFORE INSERT ON `Messages`.`Messages`
+FOR EACH ROW
+BEGIN
+	SET NEW.dateMessage = NOW();
+END$$
