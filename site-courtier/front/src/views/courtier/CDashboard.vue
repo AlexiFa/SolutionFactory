@@ -1,25 +1,48 @@
 <template>
     <div style="background-color: #588B8B;padding: 5%;" >
-      <div name="Dossier-Client" style="display: flex; align-items: center;justify-content: space-between;">
-          <div style="width:25%;">
+      <div name="Dossier-Client" class="dossier-client">
+          <div class="dossier-details">
+            <div style="width:100%;">
+              <DCardClient></DCardClient>
+            </div> 
+            <div style="width: 100%;">
+              <DCardContent></DCardContent>
+            </div>
+          </div>
+          <div style="width:35%;">
               <DCardSuivi></DCardSuivi>
           </div>
-          <div style="width:70%;">
-              <DCardDossier></DCardDossier>
-          </div>   
       </div>
     </div>
 </template>
-  
-  <script>
+<style scoped>
+  .dossier-client {
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; 
+    height: 125px;
+    background: white; 
+    border: 2px solid black;
+    border-radius: 20px;
+  }
+  .dossier-details{
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    border:2px solid black;border-radius: 20px;
+  }
+</style>
+
+<script>
   // @ is an alias to /src
   import DCardSuivi from '@/components/Dashboard/DCardSuivi.vue'
-  import DCardDossier from '@/components/Dashboard/DCardDossier.vue'
+  import DCardClient from '@/components/Dashboard/DCardClient.vue'
+  import DCardContent from '@/components/Dashboard/DCardContent.vue'
   export default {
     name: 'CDashboard',
     components: {
-      DCardSuivi, DCardDossier
+      DCardSuivi, DCardClient, DCardContent
     }
   }
-  </script>
-  
+</script>
+ 

@@ -31,7 +31,7 @@ const handleLogout = async () => {
           <router-link to="/about" class="nav-link">About</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/cDashboard" class="nav-link">Courtier Dashboard</router-link>
+          <router-link to="/CDashboard" class="nav-link">Courtier Dashboard</router-link>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,7 +39,7 @@ const handleLogout = async () => {
           </a>
           <ul class="dropdown-menu">
             <li><router-link to="/ClientForm" class="dropdown-item">Nouveau Dossier</router-link></li>
-            <li><router-link to="/CDashboard" class="dropdown-item" >Dossiers en Cours</router-link></li>
+            <li><router-link to="/UDashboard" class="dropdown-item" >Dossiers en Cours</router-link></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>

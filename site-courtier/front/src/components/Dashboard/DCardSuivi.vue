@@ -1,8 +1,7 @@
 <template>
-  
-    <div style="border: 2px solid black;border-radius: 20px; display: grid; padding: 7%; background-color: white;">
-      <h4 style="margin-bottom: 7%;">Stade d'avancement: </h4>
-      <div class="progress" style="width: 75%; margin-left: auto; margin-right: auto; border: 1px solid black;">
+    <div style="display: flex;flex-direction:column; justify-content:space-evenly; border:2px solid black;border-radius: 20px;">
+      <h4 style="">Stade d'avancement:</h4>
+      <div class="progress" style="">
         <div class="progress-bar progress-bar-consulted" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="75" :style="{ width: progress1 + '%' }">Consulté</div>
         <div class="progress-bar progress-bar-send" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="75" :style="{ width: progress2 + '%' }">Envoyé</div>
         <div class="progress-bar progress-bar-done" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="75" :style="{ width: progress3 + '%' }">Terminé</div>
