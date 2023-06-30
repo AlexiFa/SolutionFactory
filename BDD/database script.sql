@@ -1,5 +1,5 @@
 CREATE TABLE Clients(
-   id_Client INT AUTO_INCREMENT,
+   id_Client VARCHAR(255),
    nom VARCHAR(50),
    mail VARCHAR(50),
    login VARCHAR(50) NOT NULL,
@@ -14,14 +14,20 @@ CREATE TABLE Messages(
    id_Message INT AUTO_INCREMENT,
    message VARCHAR(50),
    dateMessage DATETIME,
-   id_Client INT NOT NULL,
+   id_Client VARCHAR(255) NOT NULL,
    PRIMARY KEY(id_Message),
    FOREIGN KEY(id_Client) REFERENCES Clients(id_Client)
 );
 
 CREATE TABLE Dossier(
    Id_Dossier INT AUTO_INCREMENT,
-   id_Client INT NOT NULL,
+   adresse VARCHAR(255),
+   adresse_L2 VARCHAR(255),
+   ville VARCHAR(50),
+   departement VARCHAR(50),
+   code_postale INT,
+   telephone INT,
+   id_Client VARCHAR(255) NOT NULL,
    PRIMARY KEY(Id_Dossier),
    FOREIGN KEY(id_Client) REFERENCES Clients(id_Client)
 );
