@@ -1,40 +1,7 @@
 <script setup>
-// import { useRouter } from 'vue-router';
-// import { ref, watch } from 'vue';
-// // import { inject } from 'vue';
-
-// const router = useRouter()
-// // const isLoggedIn = inject('isLoggedIn')
-// const isLoggedIn = ref(!!localStorage.getItem('token'));
-
-// watch(isLoggedIn, (newValue, oldValue) => {
-//   // Redirigir al usuario a la misma página para forzar una actualización de la vista.
-//   router.push(router.currentRoute.value);
-// });
-
-// const Logout = async () =>{
-//   const res = await fetch('http://localhost:3000/logout', {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type' : 'application/json'
-//     },
-//     body: JSON.stringify({
-//       session_token: localStorage.getItem('token')
-//     })
-//   }).then(res => res.json())
-
-//     if (res.success || res.clearToken) {
-//       localStorage.removeItem('token')
-//       isLoggedIn.value = false
-//       router.push('/')
-//     } else {
-//       alert(res.message)
-//     }
-
-// }
 
 import { useRouter } from 'vue-router';
-import { isLoggedIn, logout } from '../../services/store';  // Asegúrate de ajustar la ruta del import según tu estructura de carpetas
+import { isLoggedIn, logout } from '../../services/store';  
 
 const router = useRouter()
 

@@ -46,13 +46,17 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/register', async (req, res) => {
-    const{ email, password} = req.body;
+    const{ email, password, first_name, last_name, phone_number} = req.body;
 
     try{
         const resp = await client.passwords.create({
             email,
             password,
-            session_duration_minutes: 60
+            name: {first_name, last_name},
+
+            session_duration_minutes: 60,
+            
+
         })
 
         res.json({
@@ -71,6 +75,58 @@ app.post('/register', async (req, res) => {
     }
 
 })
+
+// app.post('/register', async (req, res) => {
+//     const{ email, password, first_name, last_name, phone_number} = req.body;
+
+//     try{
+//         const resp = await client.users.create({
+//             email,
+//             phone_number,
+//             name: {first_name, last_name},
+            
+            
+
+//         })
+
+//         res.json({
+//             success: true,
+//             message: 'User created successfuly ',
+//             // token: resp.session_token
+//         })
+//     }catch (err) {
+//         console.log(err);
+
+//         res.json({
+//             success: false,
+//             messgae: err.error_message,
+//             err: err
+//         })
+//     }
+    
+//     try{
+//         const resp = await client.passwords.create({
+//             email,
+//             password,
+//             session_duration_minutes: 60,
+//         })
+
+//         res.json({
+//             success: true,
+//             message: 'User created successfuly ',
+//             token: resp.session_token
+//         })
+//     }catch (err) {
+//         console.log(err);
+
+//         res.json({
+//             success: false,
+//             messgae: err.error_message,
+//             err: err
+//         })
+//     }
+
+// })
 
 app.post('/login', async (req, res) => {
     const{ email, password} = req.body;

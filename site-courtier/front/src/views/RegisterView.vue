@@ -6,6 +6,9 @@ import { useRouter } from 'vue-router';
 const router = useRouter()
 
 const email = ref('')
+const first_name = ref('')
+const last_name = ref('')
+const name = {first_name, last_name}
 const password = ref('')
 const conf_password = ref('')
 
@@ -25,7 +28,10 @@ const Register = async () => {
         },
         body: JSON.stringify({
             email: email.value,
-            password: password.value
+            password: password.value,
+            first_name : name.first_name.value,
+            last_name : name.last_name.value,
+            // trusted_metadata: "client"
         })
     }).then(res => res.json())
     if (res.success) {
@@ -39,8 +45,7 @@ const Register = async () => {
 </script>
 
 <template>
-    <!--<div class="ellipse1"></div>
-    <div class="ellipse2"></div>-->
+
     <div class="container card" style="padding: 1%;background-color: #2A2D34;">
         <div class="row">
         <div class="container card col" style="padding: 2%;width: 40%;background-color: #588B8B;margin: 1%;">
@@ -48,18 +53,18 @@ const Register = async () => {
             <div class="col-12 mar2">
                 <p class="h1">Register</p>
             </div>
-            <!-- <div class="col-md-6 mar2">
+            <div class="col-md-6 mar2">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="inputFirstNameLG" placeholder="First name">
-                    <label for="inputFirstNameLG">First name</label>
+                    <input type="Name" v-model="first_name" class="form-control" id="inputFirstNameLG" placeholder="First and last name">
+                    <label for="inputFirstNameLG">First name and Last Name</label>
                 </div>
             </div>
             <div class="col-md-6 mar2">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="inputLastNameLG" placeholder="Last name">
-                    <label for="inputLastNameLG">Last name</label>
+                    <input type="text" v-model="last_name" class="form-control" id="inputLastNameLG" placeholder="Phone Number">
+                    <label for="inputLastNameLG">last name</label>
                 </div>
-            </div> -->
+            </div>
             <div class="col-12 mar2">
                 <div class="form-floating">
                     <input type="email" v-model="email" class="form-control" id="inputEmailLG" placeholder="Email">
