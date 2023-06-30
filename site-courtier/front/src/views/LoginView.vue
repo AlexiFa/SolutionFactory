@@ -27,7 +27,7 @@ const Login = async () => {
     }).then(res => res.json())
     if (res.success) {
         localStorage.setItem('token', res.token)
-        isLoggedIn.value = true; // Esto cambiará el estado de inicio de sesión
+        isLoggedIn.value = true; 
         router.push('/')
     } else{
         alert(res.message)
@@ -36,8 +36,7 @@ const Login = async () => {
 </script>
 
 <template>
-    <!--<div class="ellipse1"></div>
-    <div class="ellipse2"></div>-->
+
     <div class="container card" style="padding: 1%;background-color: #2A2D34;">
         <div class="row">
         <div class="container col d-flex flex-column justify-content-center" style="margin: 1%;">
@@ -69,17 +68,3 @@ const Login = async () => {
         </div>
     </div>
 </template>
-<!-- 
-<script>
-import { inject } from 'vue';
-import { useRouter } from 'vue-router';
-
-export default {
-  setup() {
-    const isLoggedIn = inject('isLoggedIn');
-    const router = useRouter()
-    return { isLoggedIn };
-  },
-
-}
-</script> -->
