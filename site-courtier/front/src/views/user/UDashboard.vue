@@ -34,7 +34,7 @@
 .dossier-details{
     width: 75%;
     height: 175%;
-    padding: 0% 0% 0% 2%;
+    padding: 0% 2%;
     display: flex;
     flex-direction: row;
     align-items: stretch;
