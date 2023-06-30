@@ -1,9 +1,9 @@
 <template>
-        <div style="display: flex; flex-direction: column; justify-content: center; align-items:center;height: 100%; padding:1%;">
-            <div style=" margin-bottom:2%;background-color:#588B8B; border-radius: 20px;border: 1px solid;">
-                <!-- <img src="../../assets/image-dossier-menu.png" style="object-fit: contain;"> -->
+        <div style="display: flex; flex-direction: row; justify-content:space-evenly; align-items:center;height: 100%; padding:1%;border-left: 1px solid;">
+            <div style="height: 100%;width: 50%;">
+                <img src="../../assets/image-dossier-menu.png" style="height:inherit; width: auto;">
             </div>
-            <div  style="margin-top: 2%;">
+            <div>
                 <h5>Afficher les documents</h5>
             </div>
         </div>

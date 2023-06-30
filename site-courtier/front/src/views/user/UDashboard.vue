@@ -1,12 +1,16 @@
 <template>
-    <div style="background-color: #E9C46A;padding: 5%;" >
+    <div style="display: flex; flex-direction:column ;background-color: #E9C46A;padding: 5%;" >
+        <div style="margin-bottom: 5%; color: black;">
+          <h1>Menu des Dossiers en cours de traitement</h1>
+        </div>
         <!-- modele card dossier du point de vue client -->
         <div name="Dossier-Client" class="dossier-client">
             <div class="dossier-details">
-            <div style="width:60%;">
+            <div style="width:55%;">
                 <DCardClient></DCardClient>
             </div> 
-            <div style="width: 40%;">
+            <!-- cette carte ci-dessous est le futur-bouton vers le dossier detaillé-->
+            <div style="width: 45%;">
                 <DCardContent></DCardContent>
             </div>
             </div>
@@ -28,16 +32,16 @@
   margin-bottom: 5%;
 }
 .dossier-details{
-  width: 75%;
-  height: 175%;
-  padding: 0% 2%;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  background-color:white;
-  border:2px solid black;
-  border-radius: 20px;
-}
+    width: 75%;
+    height: 175%;
+    padding: 0% 0% 0% 2%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background-color:white;
+    border:3px solid black;
+    border-radius: 20px;
+  }
 </style>
 
   <script>
