@@ -11,6 +11,9 @@ const last_name = ref('')
 const name = {first_name, last_name}
 const password = ref('')
 const conf_password = ref('')
+const trusted_metadata = {role}
+const role = "CLIENT"
+
 
 const Register = async () => {
     if (!email.value || !password.value || !conf_password.value){
@@ -31,12 +34,14 @@ const Register = async () => {
             password: password.value,
             first_name : name.first_name.value,
             last_name : name.last_name.value,
-            // trusted_metadata: "client"
+            role: trusted_metadata.role
+
         })
     }).then(res => res.json())
     if (res.success) {
         localStorage.setItem('token', res.token)
         router.push('/')
+        window.location.reload();
     } else{
         alert(res.message)
     }
@@ -56,13 +61,13 @@ const Register = async () => {
             <div class="col-md-6 mar2">
                 <div class="form-floating">
                     <input type="Name" v-model="first_name" class="form-control" id="inputFirstNameLG" placeholder="First and last name">
-                    <label for="inputFirstNameLG">First name and Last Name</label>
+                    <label for="inputFirstNameLG">First name </label>
                 </div>
             </div>
             <div class="col-md-6 mar2">
                 <div class="form-floating">
                     <input type="text" v-model="last_name" class="form-control" id="inputLastNameLG" placeholder="Phone Number">
-                    <label for="inputLastNameLG">last name</label>
+                    <label for="inputLastNameLG">Last name</label>
                 </div>
             </div>
             <div class="col-12 mar2">

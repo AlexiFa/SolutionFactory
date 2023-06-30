@@ -2,6 +2,7 @@ import { ref } from 'vue';
 
 export const isLoggedIn = ref(!!localStorage.getItem('token'));
 
+
 export const setLoggedIn = (value) => {
     isLoggedIn.value = value;
     localStorage.setItem('token', value ? 'true' : '');
@@ -26,3 +27,19 @@ export const logout = async () => {
     return false;
   }
 };
+
+export const getUser = async () => {
+  const res = await fetch('http://localhost:3000/getUser', {
+    method: 'GET',
+    body: JSON.stringify({
+      user: res
+    })
+    
+  }).then(res => res.json())
+  if (res.success) {
+    localStorage.setItem('User', res)
+} else{
+    alert(res.message)
+}
+}
+

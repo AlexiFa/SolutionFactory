@@ -1,3 +1,18 @@
+<script setup>
+// import { useRoute } from 'vue-router';
+import { isLoggedIn, getUser } from '@/services/store';
+
+// const router = useRoute()
+
+const getUserInfo = async() =>{
+	const success = await getUser();
+	if(success){
+		
+	}
+}
+
+</script>
+
 <template>
     <!-- <div class="container text-center">
         <div class="row">
