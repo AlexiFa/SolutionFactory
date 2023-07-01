@@ -6,7 +6,7 @@
         <!-- modele card dossier du point de vue client -->
         <div name="Dossier-Client" class="dossier-client">
           <div style="width:30%;">
-              <DCardClient></DCardClient>
+              <DCardTitleDos></DCardTitleDos>
           </div> 
           <div style="width:30%;">
               <DCardSuivi></DCardSuivi>
@@ -47,12 +47,12 @@
   <script>
   // @ is an alias to /src
   import DCardSuivi from '@/components/Dashboard/DCardSuivi.vue'
-  import DCardClient from '@/components/Dashboard/DCardClient.vue'
+  import DCardTitleDos from '@/components/Dashboard/DCardTitleDos.vue'
   import DCardContent from '@/components/Dashboard/DCardContent.vue'
   export default {
     name: 'CDashboard',
     components: {
-      DCardSuivi, DCardContent, DCardClient
+      DCardSuivi, DCardContent, DCardTitleDos
     }
   }
   </script>
