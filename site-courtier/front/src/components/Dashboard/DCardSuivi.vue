@@ -1,7 +1,7 @@
 <template>
-    <div style="flex:1;display: flex;flex-direction:column; align-items: center; justify-content:space-evenly;border-radius: 20px;">
-      <h4 style="padding:2% 0%;">Stade d'avancement:</h4>
-      <div class="progress" style="width: 90%;">
+    <div style="display: flex;flex-direction:column; align-items: flex-start; justify-content:space-between; height:100%;">
+      <h3 style="margin-top: 10%;">Stade d'avancement:</h3>
+      <div class="progress" style="width: 100%; margin-bottom: 10%;">
         <div class="progress-bar progress-bar-consulted" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="75">Consulté</div>
         <div class="progress-bar progress-bar-send" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="75">Envoyé</div>
         <div class="progress-bar progress-bar-done" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="75">Terminé</div>
