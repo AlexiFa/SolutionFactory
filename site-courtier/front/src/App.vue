@@ -21,11 +21,19 @@
 // @ is an alias to /src
 import TopHeader from '@/components/common/TopHeader.vue';
 import MyFooter from '@/components/common/MyFooter.vue';
+import { ref, provide } from 'vue';
 
 export default {
   components: {
     TopHeader,
     MyFooter
+  },
+  setup() {
+    const isLoggedIn = ref(!!localStorage.getItem('token'));
+
+    provide('isLoggedIn', isLoggedIn);
+
+    return { isLoggedIn };
   }
 }
 // @ is an alias to /src
