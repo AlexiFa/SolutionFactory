@@ -164,6 +164,7 @@ export default {
   padding: 20px;
   width: 60%;
   float: left;
+  margin-top : -3%;
 }
 
 .custom-table {

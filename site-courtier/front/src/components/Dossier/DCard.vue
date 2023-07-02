@@ -20,7 +20,7 @@
 
     <div class="mb-3" style="padding-top: 5%; width: 30%; display: block; margin-left: auto; margin-right: auto;">
       
-      <textarea class="form-control"  rows="10" placeholder="Chat" style="border: 4px solid #2A2D34;"></textarea>
+      <textarea class="form-control"  rows="8" placeholder="Chat" style="border: 4px solid #2A2D34; "></textarea>
       <button type="button" class="btn btn-outline-dark">Envoyer</button>
       
     </div>
@@ -91,14 +91,14 @@ h3{
   display: block;
   margin-left: 60%; 
   margin-right: 60%;
-  margin-top: 5%;
+  margin-top: 15%;
   width: 35%;
 }
 
 .btn{
   border-radius: 30px;
-  
 }
-  
+
+
 
 </style>
