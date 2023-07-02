@@ -1,6 +1,6 @@
 import express from 'express';
 // import stythc;
-import {envs, Client} from 'stytch';
+import {envs, Client, UserSearchOperator} from 'stytch';
 import dotenv from 'dotenv';
 import cors from 'cors';
 // import { json } from 'sequelize';
@@ -155,38 +155,39 @@ app.post('/logout', async (req, res) => {
   });
 
 
-// app.get('/getUserByName', async (req, res) => {
-//     const{ email, first_name, last_name } = req.body;
 
-//     try{
-//         const user = await client.users.get({
-//             email,
-//             name : {first_name, last_name},
-
-//         })
-
-//         res.send({
-//             success : true,
-//             message : "User data get successfuly",
-//             // user_id : user.user_id,
-//             // user : user.user,
-//             // email_id : user.email_id,
-//             user
-//         })
-//     }catch (err) {
-//         console.log(err);
-
-//         res.json({
-//             success: false,
-//             messgae: err.error_message,
-//             err: err
-//         })
-//     }
-// })
 
 app.post('/searchUser', async (req, res) => {
-    const {limit, operator, }
+    const {filter_value} = req.body;
+    try {
+        const user = await client.user.search({
+            limit : 5, 
+            query: {operator, operands},
+            operator : UserSearchOperator.AND,
+            operands :
+            // [
+                // {filter_name: "user_id", filter_value},
+                // {filter_name: "phone_number", filter_value},
+                // {filter_name: "full_name_fuzzy", filter_value},
+                {filter_name: "email_address", filter_value}
+            // ]
+        })
+        res.json({
+            success : true,
+            messgae: 'Search correctly',
+            user: user.results
+        })
+        
+    }catch (err){
+        console.log(err)
+        res.json({
+            success: false,
+            message: "error in search method",
+            err: err
+        })
+    }
 })
+
 
 
 app.listen(3000, () =>{

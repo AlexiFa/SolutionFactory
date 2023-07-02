@@ -28,18 +28,26 @@ export const logout = async () => {
   }
 };
 
-export const getUser = async () => {
-  const res = await fetch('http://localhost:3000/getUser', {
-    method: 'GET',
-    body: JSON.stringify({
-      user: res
-    })
-    
-  }).then(res => res.json())
-  if (res.success) {
-    localStorage.setItem('User', res)
-} else{
-    alert(res.message)
-}
-}
+// export const searchUser = async () => {
+//   const user = await fetch('http://localhost:3000/searchUser', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type' : 'application/json'
+//     },
+//     body: JSON.stringify({
+//       email: email.value,
+
+//     })
+//   }).then(user => user.json())
+//   if (user.success) {
+//     localStorage.setItem('currentUser', user.User)
+
+
+// } else{
+//     alert(user.message)
+// }
+// }
+
+
+
 

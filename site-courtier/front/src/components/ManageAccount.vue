@@ -1,14 +1,9 @@
 <script setup>
-// import { useRoute } from 'vue-router';
-import { isLoggedIn, getUser } from '@/services/store';
+import { searchUser } from '../services/store'
 
-// const router = useRoute()
 
-const getUserInfo = async() =>{
-	const success = await getUser();
-	if(success){
-		
-	}
+const currentUser = async() =>{
+	const success = await searchUser();
 }
 
 </script>
@@ -51,7 +46,7 @@ const getUserInfo = async() =>{
 				<div class="user-avatar">
 					<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
 				</div>
-				<h5 class="user-name">Yuki Hayashi</h5>
+				<h5 class="user-name">{{ currentUser }}</h5>
 				<h6 class="user-email">yuki@Maxwell.com</h6>
 			</div>
 			<div class="about">
@@ -140,7 +135,12 @@ const getUserInfo = async() =>{
 
 <script>
 export default {
-    name: 'ManageAccount'
+    name: 'ManageAccount',
+	data() {
+    return {
+      user: {}
+    };
+  },
 
 }
 
