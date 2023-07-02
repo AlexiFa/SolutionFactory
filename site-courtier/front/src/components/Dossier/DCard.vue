@@ -1,7 +1,7 @@
 
 <template>
   
-  <div style="border: 1px solid black; display: grid; background-color:#588B8B;">
+  <div class ="div1">
 
     <h3>Stade d'avancement: </h3>
     <div class="progress" style="width: 50%; margin-left: auto; margin-right: auto;">
@@ -10,10 +10,12 @@
       <div class="progress-bar progress-bar-done" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="75" :style="{ width: progress3 + '%' }">Terminé</div>
     </div>
 
-    <div style="padding-top: 2%" >
-        <button type="button" class="btn btn-dark btn-sm" @click="Consulted">Consulté</button>
-        <button type="button" class="btn btn-dark btn-sm" @click="Send">Envoyé</button>
-        <button type="button" class="btn btn-dark btn-sm" @click="Done">Terminé</button>
+    <div class="btn">
+        <button type="button" class="btn btn-dark btn-sm " @click="Consulted" >Consulté</button>
+        <span style="margin: 0 10px;"></span>
+        <button type="button" class="btn btn-dark btn-sm " @click="Send" >Envoyé</button>
+        <span style="margin: 0 10px;"></span>
+        <button type="button" class="btn btn-dark btn-sm" @click="Done" >Terminé</button>
     </div>
 
     <div class="mb-3" style="padding-top: 5%; width: 30%; display: block; margin-left: auto; margin-right: auto;">
@@ -74,5 +76,29 @@ height: 100%;
 width: 50%;
 text-align: center;
 }
+
+h3{
+  text-align: center;
+  padding-top: 2%;
+  color: #000000;
+}
+
+.div1
+{
+  border-radius: 30px;
+  border: #000000 1px solid;
+  background-color:#588B8B;  
+  display: block;
+  margin-left: 60%; 
+  margin-right: 60%;
+  margin-top: 5%;
+  width: 35%;
+}
+
+.btn{
+  border-radius: 30px;
+  
+}
+  
 
 </style>

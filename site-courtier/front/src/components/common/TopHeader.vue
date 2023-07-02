@@ -36,7 +36,7 @@
     </div>
   </div>
 </nav>
-<router-view></router-view>
+<router-view> </router-view>
 </template>
 
 
