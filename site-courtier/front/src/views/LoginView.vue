@@ -27,9 +27,11 @@ const Login = async () => {
     }).then(res => res.json())
     if (res.success) {
         localStorage.setItem('token', res.token)
+        localStorage.setItem('user_id', res.user_id)
 
         isLoggedIn.value = true; 
         router.push('/')
+        window.location.reload();
     } else{
         alert(res.message)
     }

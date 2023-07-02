@@ -1,3 +1,5 @@
+const Sequelize = require('sequelize');
+
 module.exports = {
     HOST: "localhost",
     USER: "root",
