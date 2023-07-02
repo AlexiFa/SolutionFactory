@@ -29,7 +29,6 @@ export const getUserInfo = async (req, res) => {
     }
 }
 
-
 // TODO: tester cette fonction
 export const searchUser = async (req, res) => {
     const { email } = req.query;
