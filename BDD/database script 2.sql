@@ -36,3 +36,17 @@ CREATE TABLE Documents(
    PRIMARY KEY(id_Documents),
    FOREIGN KEY(Id_Dossier) REFERENCES Dossier(Id_Dossier)
 );
+
+CREATE TABLE Addresses(
+   id INT AUTO_INCREMENT,
+   address1 VARCHAR(255),
+   address2 VARCHAR(255),
+   city VARCHAR(100),
+   department VARCHAR(100),
+   postalCode VARCHAR(10),
+   PRIMARY KEY(id)
+);
+
+ALTER TABLE Addresses
+ADD COLUMN user_id INT,
+ADD FOREIGN KEY (user_id) REFERENCES Clients(id_Client);
