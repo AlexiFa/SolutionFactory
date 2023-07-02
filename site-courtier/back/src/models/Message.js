@@ -1,6 +1,6 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../db.config.js');
-const Client = require('./Client.js');
+import { Sequelize, DataTypes } from 'sequelize';
+import sequelize from '../config/db.config.js';
+import Client from './Client.js';
 
 const Message = sequelize.define('Message', {
   id_Message: {
@@ -17,4 +17,4 @@ const Message = sequelize.define('Message', {
 
 Message.belongsTo(Client, { foreignKey: 'id_Client' });
 
-module.exports = Message;
+export default Message;

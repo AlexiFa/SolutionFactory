@@ -1,6 +1,6 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../db.config.js');
-const Client = require('./Client.js');
+import { Sequelize, DataTypes } from 'sequelize';
+import sequelize from '../config/db.config.js';
+import Client from './Client.js';
 
 const Dossier = sequelize.define('Dossier', {
   Id_Dossier: {
@@ -15,4 +15,4 @@ const Dossier = sequelize.define('Dossier', {
 
 Dossier.belongsTo(Client, { foreignKey: 'id_Client' });
 
-module.exports = Dossier;
+export default Dossier;
