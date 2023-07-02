@@ -11,7 +11,7 @@ export const setLoggedIn = (value, user_id) => {
 };
 
 export const logout = async () => {
-  const res = await fetch('http://localhost:3000/logout', {
+  const res = await fetch('http://localhost:3000/api/auth/logout', {
     method: 'POST',
     headers: {
       'Content-Type' : 'application/json'
@@ -35,7 +35,7 @@ export const getUserInfo = async () => {
 
   if(!user_id){return}
 
-  const res = await fetch(`http://localhost:3000/userinfo?user_id=${user_id}`, {
+  const res = await fetch(`http://localhost:3000/api/users/userinfo?user_id=${user_id}`, {
 
     
     method: 'GET',

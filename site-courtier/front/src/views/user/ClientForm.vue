@@ -5,7 +5,7 @@
             
             </div>
             <div class="col-8">
-                <form class="row g-3">
+                <form class="row g-3" @submit.prevent="submitForm">
                     
                     <div class="col-12">
                         <br><br><br>
@@ -73,7 +73,7 @@
 
 
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                        <button type="submit" class="btn btn-primary" >Envoyer</button>
                     </div>
                     <br>
                 </form>
@@ -88,3 +88,21 @@
 
 </template>
   
+
+<script>
+export default {
+    data() {
+        return {
+            form: {
+                address: '',
+                // Más campos...
+            },
+        };
+    },
+    methods: {
+        async submitForm() {
+            // Aquí es donde vas a enviar los datos a tu back-end
+        },
+    },
+};
+</script>
