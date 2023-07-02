@@ -1,3 +1,13 @@
+<script setup>
+import { searchUser } from '../services/store'
+
+
+const currentUser = async() =>{
+	const success = await searchUser();
+}
+
+</script>
+
 <template>
     <!-- <div class="container text-center">
         <div class="row">
@@ -36,7 +46,7 @@
 				<div class="user-avatar">
 					<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
 				</div>
-				<h5 class="user-name">Yuki Hayashi</h5>
+				<h5 class="user-name">{{ currentUser }}</h5>
 				<h6 class="user-email">yuki@Maxwell.com</h6>
 			</div>
 			<div class="about">
@@ -125,7 +135,12 @@
 
 <script>
 export default {
-    name: 'ManageAccount'
+    name: 'ManageAccount',
+	data() {
+    return {
+      user: {}
+    };
+  },
 
 }
 

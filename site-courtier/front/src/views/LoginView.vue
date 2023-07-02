@@ -6,9 +6,9 @@ const router = useRouter()
 
 const email = ref('')
 const password = ref('')
-const isLoggedIn = ref(!!localStorage.getItem('token')) // Esto verificará el estado de inicio de sesión al cargar el componente
+const isLoggedIn = ref(!!localStorage.getItem('token')) 
 
-provide('isLoggedIn', isLoggedIn); // Esta línea proporciona la variable a todos los componentes hijos
+provide('isLoggedIn', isLoggedIn); 
 
 const Login = async () => {
     if (!email.value || !password.value){
@@ -27,6 +27,7 @@ const Login = async () => {
     }).then(res => res.json())
     if (res.success) {
         localStorage.setItem('token', res.token)
+
         isLoggedIn.value = true; 
         router.push('/')
     } else{
