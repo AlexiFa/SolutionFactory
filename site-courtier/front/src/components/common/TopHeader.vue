@@ -30,11 +30,11 @@ const handleLogout = async () => {
         <li class="nav-item">
           <router-link to="/about" class="nav-link">About</router-link>
         </li>
-        <li class="nav-item" >
-          <router-link to="/CDashboard" class="nav-link">Courtier Dashboard</router-link>
+        <li class="nav-item" v-if="isLoggedIn && userInfo">
+          <router-link to="/CDashboard" class="nav-link" v-if="userInfo.trusted_metadata.role == 'COURTIER'">Courtier Dashboard</router-link>
         </li>
-        <li class="nav-item dropdown" v-if="isLoggedIn">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown" v-if="isLoggedIn && userInfo">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" v-if="userInfo.trusted_metadata.role == 'CLIENT'">
             Client Dashboard
           </a>
           <ul class="dropdown-menu" >
@@ -48,7 +48,7 @@ const handleLogout = async () => {
         </li>
         <li class="nav-item" v-if="isLoggedIn">
           <!-- Rajouter du css --><span v-if="userInfo">Welcome {{ userInfo.name.first_name }}</span>
-          <button @click="handleLogout"></button>
+          <button @click="handleLogout" class="btn btn-danger">Logout</button>
         </li>
       </ul>
       <form class="d-flex" role="search">
