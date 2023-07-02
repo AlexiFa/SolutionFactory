@@ -33,6 +33,15 @@ const Login = async () => {
         alert(res.message)
     }
 }
+
+function togglePassword(id) {
+    // get the password input field and the eye icon
+    const inputPassword = document.querySelector('#' + id);
+    // Toggle the type attribute using
+    // getAttribure() method
+    const type = inputPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+    inputPassword.setAttribute('type', type);
+}
 </script>
 
 <template>
@@ -53,11 +62,12 @@ const Login = async () => {
                         <label for="inputEmailLG">Email</label>
                     </div>
                 </div>
-                <div class="col-12 mar">
-                    <div class="form-floating">
+                <div class="col-12 mar d-flex text-center">
+                    <div class="form-floating col-12">
                         <input type="password" v-model="password" class="form-control" id="inputPasswordLG" placeholder="Password">
                         <label for="inputPassword">Password</label>
                     </div>
+                    <i class="bi bi-eye-slash col align-self-center tglPwd" id="togglePasswordRG" @click="togglePassword('inputPasswordLG')"></i>
                 </div>
                 <div class="col-12">
                     <button type="submit" value="Login" class="btn btn-primary fs-2" style="background-color: #E9C46A;border-color: #588B8B;color: black;">Sign in</button>
