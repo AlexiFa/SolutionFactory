@@ -13,6 +13,7 @@
 import TopHeader from '@/components/common/TopHeader.vue';
 import MyFooter from '@/components/common/MyFooter.vue';
 import { ref, provide } from 'vue';
+import { fetchUserInfo } from './services/store';
 
 export default {
   components: {
@@ -25,7 +26,14 @@ export default {
     provide('isLoggedIn', isLoggedIn);
 
     return { isLoggedIn };
+    
+  },
+  created() {
+    if (this.isLoggedIn) {
+      fetchUserInfo();
+    }
   }
+
 }
 // @ is an alias to /src
 </script>

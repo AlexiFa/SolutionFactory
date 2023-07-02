@@ -27,6 +27,7 @@ const Login = async () => {
     }).then(res => res.json())
     if (res.success) {
         localStorage.setItem('token', res.token)
+
         isLoggedIn.value = true; 
         router.push('/')
     } else{

@@ -61,7 +61,8 @@ app.post('/register', async (req, res) => {
         res.json({
             success: true,
             message: 'User created successfuly ',
-            token: resp.session_token
+            token: resp.session_token,
+            user_id: resp.user_id
         })
     }catch (err) {
         console.log(err);
@@ -90,7 +91,8 @@ app.post('/login', async (req, res) => {
         res.json({
             success: true,
             message: 'User loged in successfuly ',
-            token: resp.session_token
+            token: resp.session_token,
+            user_id: resp.user_id
         })
     }catch (err) {
         console.log(err);
@@ -187,6 +189,28 @@ app.post('/searchUser', async (req, res) => {
         })
     }
 })
+
+app.get('/userinfo', async (req, res) => {
+    const { user_id } = req.query;
+
+
+    try {
+        const user = await client.users.get(user_id)
+        res.json({
+            success: true,
+            message: 'User information retrieved successfully',
+            user: user
+        })
+    } catch (err) {
+        console.log(err)
+        res.json({
+            success: false,
+            message: "error in get user method",
+            err: err
+        })
+    }
+})
+
 
 
 

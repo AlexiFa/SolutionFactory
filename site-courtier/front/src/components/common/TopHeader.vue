@@ -1,7 +1,7 @@
 <script setup>
 
 import { useRouter } from 'vue-router';
-import { isLoggedIn, logout } from '../../services/store';  
+import { isLoggedIn, logout, userInfo} from '../../services/store';  
 
 const router = useRouter()
 
@@ -48,7 +48,7 @@ const handleLogout = async () => {
           <router-link to="/ManageAccount" class="nav-link">Account</router-link>
         </li>
         <li class="nav-item" v-if="isLoggedIn">
-          <!-- Rajouter du css -->
+          <!-- Rajouter du css --><span v-if="userInfo">Welcome {{ userInfo.name.first_name }}</span>
           <button @click="handleLogout"></button>
         </li>
       </ul>
@@ -64,7 +64,6 @@ const handleLogout = async () => {
 
 
 <script>
-
 
 export default {
     name: 'TopHeader',
