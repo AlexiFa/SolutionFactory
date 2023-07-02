@@ -37,7 +37,7 @@ export const searchUser = async (req, res) => {
         const user = await client.users.search({ 
             limit: 1,
             query: {
-                operator: "AND", // AND or OR (ca change rien pour cette fonction normalement)
+                operator: AND, // AND or OR (ca change rien pour cette fonction normalement)
                 operands:[
                     {
                         "filter_name": "email_address",
