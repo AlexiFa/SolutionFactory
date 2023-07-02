@@ -39,7 +39,7 @@
     </div>
 
     <div>
-      <button id="add" class="btn btn-dark" @click="openForm">Ajouter une proposition</button>
+      <button id="add" class="btn btn-dark btn-sm" @click="openForm">Ajouter une proposition</button>
     </div>
 
     <div>
@@ -184,8 +184,6 @@ export default {
   border-radius: 10px;
   float: right;
   margin-top: 8px;
-  width: 200px;
-
 }
 
 #add {
@@ -195,8 +193,6 @@ export default {
   float: right;
   margin-top: 10px;
   margin-bottom: 10px;
-  width: 200px;
-  
 }
 
 #ajouter{
