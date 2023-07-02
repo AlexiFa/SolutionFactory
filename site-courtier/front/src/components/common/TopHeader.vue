@@ -48,7 +48,7 @@ const handleLogout = async () => {
         </li>
         <li class="nav-item" v-if="isLoggedIn">
           <!-- Rajouter du css --><span v-if="userInfo">Welcome {{ userInfo.name.first_name }}</span>
-          <button @click="handleLogout"></button>
+          <button @click="handleLogout" class="btn btn-danger">Logout</button>
         </li>
       </ul>
       <form class="d-flex" role="search">

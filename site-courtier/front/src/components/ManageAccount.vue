@@ -1,7 +1,16 @@
 <script setup>
 
-import { userInfo } from '@/services/store';
+import { useRouter } from 'vue-router';
+import { logout, userInfo} from '@/services/store';  
 
+const router = useRouter()
+
+const handleLogout = async () => {
+  const success = await logout();
+  if (success) {
+    router.push('/');
+  }
+}
 
 
 </script>
@@ -47,6 +56,7 @@ import { userInfo } from '@/services/store';
 				<h5 class="user-name">{{ userInfo.name.first_name }}</h5>
 				<h6 class="user-email">{{ userInfo.emails.email }}</h6>
 			</div>
+			<button @click="handleLogout" class="btn btn-danger">Logout</button>
 			<div class="about">
 				<h5>About</h5>
 				<p>I'm {{userInfo.name.first_name}}. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
