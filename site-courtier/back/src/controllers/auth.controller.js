@@ -91,3 +91,26 @@ export const logout = async (req, res) => {
         }
     }
 };
+
+export const authenticate = async (req, res) => {
+    const { session_token } = req.body;
+
+    try {
+        await client.sessions.authenticate({
+            session_token
+        })
+
+        res.json({
+            success: true,
+            message: 'Token is valid ',
+        })
+    } catch (err) {
+        console.log(err);
+
+        res.json({
+            success: false,
+            message: err.error_message,
+            err: err
+        })
+    }
+}
