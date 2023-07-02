@@ -7,6 +7,11 @@ div{
 .mar2{
     margin-bottom: 3.34%;
 }
+.tglPwd{
+    cursor: pointer;
+    color: white;
+    margin-left: 1%;
+}
 /*body{
     background-image: url(../Login.png);
     background-repeat: no-repeat;
