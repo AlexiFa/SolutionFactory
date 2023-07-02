@@ -30,20 +30,20 @@ const handleLogout = async () => {
         <li class="nav-item">
           <router-link to="/about" class="nav-link">About</router-link>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" >
           <router-link to="/CDashboard" class="nav-link">Courtier Dashboard</router-link>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" v-if="isLoggedIn">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Client Dashboard
           </a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" >
             <li><router-link to="/UDashboard" class="dropdown-item" >Dossiers en Cours</router-link></li>
             <li><hr class="dropdown-divider"></li>
             <li><router-link to="/ClientForm" class="dropdown-item">Nouveau Dossier</router-link></li>
           </ul>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" v-if="isLoggedIn">
           <router-link to="/ManageAccount" class="nav-link">Account</router-link>
         </li>
         <li class="nav-item" v-if="isLoggedIn">

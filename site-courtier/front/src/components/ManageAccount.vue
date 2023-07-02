@@ -1,10 +1,8 @@
 <script setup>
-import { searchUser } from '../services/store'
+
+import { userInfo } from '@/services/store';
 
 
-const currentUser = async() =>{
-	const success = await searchUser();
-}
 
 </script>
 
@@ -46,12 +44,12 @@ const currentUser = async() =>{
 				<div class="user-avatar">
 					<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
 				</div>
-				<h5 class="user-name">{{ currentUser }}</h5>
-				<h6 class="user-email">yuki@Maxwell.com</h6>
+				<h5 class="user-name">{{ userInfo.name.first_name }}</h5>
+				<h6 class="user-email">{{ userInfo.email }}</h6>
 			</div>
 			<div class="about">
 				<h5>About</h5>
-				<p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
+				<p>I'm {{userInfo.name.first_name}}. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
 			</div>
 		</div>
 	</div>
