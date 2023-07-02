@@ -42,6 +42,7 @@ const Register = async () => {
         localStorage.setItem('token', res.token)
         localStorage.setItem('user_id', res.user_id)
         router.push('/')
+  
         window.location.reload();
     } else{
         alert(res.message)

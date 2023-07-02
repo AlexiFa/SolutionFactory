@@ -45,7 +45,7 @@ import { userInfo } from '@/services/store';
 					<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
 				</div>
 				<h5 class="user-name">{{ userInfo.name.first_name }}</h5>
-				<h6 class="user-email">{{ userInfo.email }}</h6>
+				<h6 class="user-email">{{ userInfo.emails.email }}</h6>
 			</div>
 			<div class="about">
 				<h5>About</h5>

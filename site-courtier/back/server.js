@@ -1,6 +1,6 @@
 import express from 'express';
 // import stythc;
-import {envs, Client, UserSearchOperator} from 'stytch';
+import {envs, Client} from 'stytch';
 import dotenv from 'dotenv';
 import cors from 'cors';
 // import { json } from 'sequelize';
@@ -85,7 +85,8 @@ app.post('/login', async (req, res) => {
         const resp = await client.passwords.authenticate({
             email,
             password,
-            session_duration_minutes: 60
+            session_duration_minutes: 60,
+            
         })
 
         res.json({
@@ -159,36 +160,6 @@ app.post('/logout', async (req, res) => {
 
 
 
-app.post('/searchUser', async (req, res) => {
-    const {filter_value} = req.body;
-    try {
-        const user = await client.user.search({
-            limit : 5, 
-            query: {operator, operands},
-            operator : UserSearchOperator.AND,
-            operands :
-            // [
-                // {filter_name: "user_id", filter_value},
-                // {filter_name: "phone_number", filter_value},
-                // {filter_name: "full_name_fuzzy", filter_value},
-                {filter_name: "email_address", filter_value}
-            // ]
-        })
-        res.json({
-            success : true,
-            messgae: 'Search correctly',
-            user: user.results
-        })
-        
-    }catch (err){
-        console.log(err)
-        res.json({
-            success: false,
-            message: "error in search method",
-            err: err
-        })
-    }
-})
 
 app.get('/userinfo', async (req, res) => {
     const { user_id } = req.query;
