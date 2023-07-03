@@ -71,16 +71,24 @@ function togglePassword(id) {
                 <div class="col-12 mar d-flex text-center">
                     <div class="form-floating col-12">
                         <input type="password" v-model="password" class="form-control" id="inputPasswordLG" placeholder="Password">
-                        <label for="inputPassword">Password</label>
+                        <label for="inputPassword">Mot de passe</label>
                     </div>
                     <i class="bi bi-eye-slash col align-self-center tglPwd" id="togglePasswordRG" @click="togglePassword('inputPasswordLG')"></i>
                 </div>
                 <div class="col-12">
-                    <button type="submit" value="Login" class="btn btn-primary fs-2" style="background-color: #E9C46A;border-color: #588B8B;color: black;">Sign in</button>
+                    <button type="submit" value="Login" class="btn btn-dark btn-lg " style="background-color: #E9C46A;border-color: #588B8B;color: black;">Se connecter</button>
                 </div>
             </form>
-            <router-link to="/register" style="margin-top: 3%;color: black;">Register</router-link>
+            <router-link to="/register" style="margin-top: 3%;color: black;">S'enregistrer</router-link>
         </div>
         </div>
     </div>
 </template>
+
+<style scoped>
+button{
+  background-color: #E9C46A;
+  color: black;
+  border-radius: 10px;
+}
+</style>

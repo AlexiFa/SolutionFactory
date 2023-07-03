@@ -71,13 +71,13 @@ function togglePassword(id) {
             <div class="col-md-6 mar2">
                 <div class="form-floating">
                     <input type="Name" v-model="first_name" class="form-control" id="inputFirstNameLG" placeholder="First and last name">
-                    <label for="inputFirstNameLG">First name </label>
+                    <label for="inputFirstNameLG">Prénom </label>
                 </div>
             </div>
             <div class="col-md-6 mar2">
                 <div class="form-floating">
                     <input type="text" v-model="last_name" class="form-control" id="inputLastNameLG" placeholder="Phone Number">
-                    <label for="inputLastNameLG">Last name</label>
+                    <label for="inputLastNameLG">Nom</label>
                 </div>
             </div>
             <div class="col-12 mar2">
@@ -89,22 +89,22 @@ function togglePassword(id) {
             <div class="col-12 mar2 d-flex text-center">
                 <div class="form-floating col-12">
                     <input type="password" v-model="password" class="form-control" id="inputPasswordRG" placeholder="*************">
-                    <label for="inputPassword">Password</label>
+                    <label for="inputPassword">Mot de passe</label>
                 </div>
                 <i class="bi bi-eye-slash col align-self-center tglPwd" id="togglePasswordRG" @click="togglePassword('inputPasswordRG')"></i>
             </div>
             <div class="col-12 mar2 d-flex text-center">
                 <div class="form-floating col-12">
                     <input type="password" v-model="conf_password" class="form-control" id="inputConfirmPasswordRG" placeholder="*************">
-                    <label for="inputConfirmPassword">Confirm Password</label>
+                    <label for="inputConfirmPassword">Confirmer le mot de passe</label>
                 </div>
                 <i class="bi bi-eye-slash col align-self-center tglPwd" id="togglePasswordRG" @click="togglePassword('inputConfirmPasswordRG')"></i>
             </div>
             <div class="col-12">
-                <button type="submit" value="Register" class="btn btn-primary fs-2" style="background-color: #E9C46A;border-color: #588B8B;color: black;">Sign up</button>
+                <button type="submit" value="Register" class="btn btn-primary fs-2" style="background-color: #E9C46A;border-color: #588B8B;color: black;">S'enregistrer</button>
             </div>
         </form>
-        <router-link to="/login" style="margin-top: 3%;color: black;">already have an account ?</router-link>
+        <router-link to="/login" style="margin-top: 3%;color: black;">Vous avez déjà un compte ?</router-link>
         </div>
         <div class="container col d-flex flex-column justify-content-center" style="margin: 1%;">
             <img src="../assets/logo.png" alt="logo">
@@ -112,3 +112,11 @@ function togglePassword(id) {
         </div>
     </div>
 </template>
+
+<style scoped>
+button{
+  background-color: #E9C46A;
+  color: black;
+  border-radius: 10px;
+}
+</style>
