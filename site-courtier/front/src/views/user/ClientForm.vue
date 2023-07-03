@@ -77,11 +77,7 @@
 
 
                     <div class="col-12">
-<<<<<<< Updated upstream
                         <button type="submit" class="btn btn-primary" >Envoyer</button>
-=======
-                        <button  v-on:click="submitForm()" class="btn btn-primary">Envoyer</button>
->>>>>>> Stashed changes
                     </div>
                     <br>
                 </form>
@@ -95,7 +91,6 @@
     </div>
 
 </template>
-<<<<<<< Updated upstream
   
 
 <script>
@@ -115,49 +110,3 @@ export default {
     },
 };
 </script>
-=======
-
-<script setup>
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
-
-const address = ref('')
-const phoneNumber = ref('')
-const file = ref(null)
-
-const handleFileUpload = () => {
-  file.value = event.target.files[0]
-}
-
-const submitForm = async () => {
-  if (!address.value || !phoneNumber.value || !file.value) {
-    return alert('Veuillez remplir tous les champs')
-  }
-
-  const formData = new FormData()
-  formData.append('address', address.value)
-  formData.append('phoneNumber', phoneNumber.value)
-  formData.append('file', file.value)
-
-  try {
-    const response = await fetch('http://localhost:3000/submit-form', {
-      method: 'POST',
-      body: formData
-    })
-
-    if (response.ok) {
-      alert('Formulaire soumis avec succès')
-      router.push('/')
-    } else {
-      alert('Une erreur est survenue lors de la soumission du formulaire')
-    }
-  } catch (error) {
-    console.error(error)
-    alert('Une erreur est survenue lors de la soumission du formulaire')
-  }
-}
-</script>
-  
->>>>>>> Stashed changes
