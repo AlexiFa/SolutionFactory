@@ -31,7 +31,10 @@ const Login = async () => {
         
         isLoggedIn.value = true; 
         router.push('/')
-        window.location.reload();
+        setTimeout(() => {
+            window.location.reload();        
+        }, 300);
+    
     } else{
         alert(res.message)
     }
