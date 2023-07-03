@@ -167,6 +167,7 @@ export default {
   margin-top : -3%;
 }
 
+
 .custom-table {
   background-color: #E9C46A;
 }
