@@ -18,17 +18,17 @@ const handleLogout = async () => {
 <template>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <router-link to="/" class="navbar-brand">Home</router-link>
+    <router-link to="/" class="navbar-brand">Accueil</router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item" v-if="!isLoggedIn">
-          <router-link to="/login" class="nav-link active" aria-current="page">Login</router-link>
+          <router-link to="/login" class="nav-link active" aria-current="page">Connexion</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/about" class="nav-link">About</router-link>
+          <router-link to="/about" class="nav-link">À propos</router-link>
         </li>
         <li class="nav-item" v-if="isLoggedIn && userInfo">
           <router-link to="/CDashboard" class="nav-link" v-if="userInfo.trusted_metadata.role == 'COURTIER'">Courtier Dashboard</router-link>
@@ -52,14 +52,15 @@ const handleLogout = async () => {
         </li>
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
+        <button class="btn btn-dark" type="submit">Recherche</button>
       </form>
     </div>
   </div>
 </nav>
 <router-view> </router-view>
 </template>
+
 <style scoped >
 @media all and (min-width: 992px) {
 	.navbar .nav-item .dropdown-menu{ display: none; }
@@ -67,6 +68,12 @@ const handleLogout = async () => {
 	.navbar .nav-item:hover .dropdown-menu{ display: block; }
 	.navbar .nav-item .dropdown-menu{ margin-top:0; }
 }	
+
+button{
+  background-color: #E9C46A;
+  color: black;
+  border-radius: 10px;
+}
 </style>
 
 <script>

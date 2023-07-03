@@ -60,7 +60,7 @@ function togglePassword(id) {
         <div id="card" class="container card col" style="padding: 2%;width: 40%;background-color: #588B8B;margin: 1%;">
             <form class="row g-5" @submit.prevent="Login">
                 <div class="col-12 mar">
-                    <p class="h2">Login</p>
+                    <p class="h2">Se connecter</p>
                 </div>
                 <div class="col-12 mar">
                     <div id="dispo" class="form-floating">
