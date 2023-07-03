@@ -1,6 +1,6 @@
 import { Sequelize, DataTypes } from 'sequelize';
 import sequelize from '../config/db.config.js';
-import Client from './Client.js';
+import User from './Client.js';
 
 const Dossier = sequelize.define('Dossier', {
   Id_Dossier: {
@@ -13,6 +13,6 @@ const Dossier = sequelize.define('Dossier', {
   timestamps: false
 });
 
-Dossier.belongsTo(Client, { foreignKey: 'id_Client' });
+Dossier.belongsTo(User, { foreignKey: 'id_User' });
 
 export default Dossier;
