@@ -5,11 +5,12 @@ import sequelize from '../src/config/db.config.js';
 async function seed() {
   // Données pour test
   const users = [
-    { nom: 'John Doe', mail: 'john@mail.com', login: 'john', password: '123456', telephone: '1234567890', prenom: 'John', userType: 1 },
-    { nom: 'Jane Doe', mail: 'jane@mail.com', login: 'jane', password: 'abcdef', telephone: '2345678901', prenom: 'Jane', userType: 2 },
-    { nom: 'Bob Smith', mail: 'bob@mail.com', login: 'bob', password: '123abc', telephone: '3456789012', prenom: 'Bob', userType: 3 },
-    { nom: 'Alice Johnson', mail: 'alice@mail.com', login: 'alice', password: 'abc123', telephone: '4567890123', prenom: 'Alice', userType: 4 },
-    { nom: 'Charlie Brown', mail: 'charlie@mail.com', login: 'charlie', password: 'password', telephone: '5678901234', prenom: 'Charlie', userType: 5 },
+    { nom: 'John Doe', mail: 'john@mail.com', login: 'john', password: '123456', telephone: '1234567890', prenom: 'John', userType: 'CLIENT' },
+    { nom: 'Jane Doe', mail: 'jane@mail.com', login: 'jane', password: 'abcdef', telephone: '2345678901', prenom: 'Jane', userType: 'CLIENT' },
+    { nom: 'Bob Smith', mail: 'bob@mail.com', login: 'bob', password: '123abc', telephone: '3456789012', prenom: 'Bob', userType: 'CLIENT' },
+    { nom: 'Alice Johnson', mail: 'alice@mail.com', login: 'alice', password: 'abc123', telephone: '4567890123', prenom: 'Alice', userType: 'CLIENT' },
+    { nom: 'Charlie Brown', mail: 'charlie@mail.com', login: 'charlie', password: 'password', telephone: '5678901234', prenom: 'Charlie', userType: 'CLIENT' },
+    { nom: 'Courtier Courtier', mail: 'courtier@mail.com', login: 'courtier@gmail.com', password: 'Courtier123!', telephone: '', prenom: '', userType: 'COURTIER' },
   ];
 
   const dossiers = [
