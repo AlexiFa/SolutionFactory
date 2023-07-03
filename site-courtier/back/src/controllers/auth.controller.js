@@ -1,5 +1,10 @@
 import { Client } from 'stytch';
 import dotenv from 'dotenv';
+import User from '../models/User.js';
+
+
+
+
 
 dotenv.config()
 
@@ -22,11 +27,22 @@ export const register = async (req, res) => {
 
         })
 
+        // Crear un nuevo cliente en la base de datos local
+        const newUser = await User.create({
+            nom: first_name + ' ' + last_name,
+            mail: email,
+            login: email,  // Suponiendo que el login es el mismo que el email
+            password, // Deberías almacenar esto como un hash, no en texto plano
+            userType: role, // Suponiendo que `role` es un número
+        });
+
         res.json({
             success: true,
             message: 'User created successfully ',
             token: resp.session_token,
-            user_id: resp.user_id
+            user_id: resp.user_id,
+            newUser
+
         })
     } catch (err) {
         console.log(err);
@@ -49,11 +65,26 @@ export const login = async (req, res) => {
             session_duration_minutes: 60
         })
 
+        // Buscar al usuario en la base de datos local
+        const user = await User.findOne({
+            where: {
+                login: email,
+            },
+        });
+
+        if (!user) {
+            return res.json({
+                success: false,
+                message: 'User not found in local database',
+            });
+        }
+
         res.json({
             success: true,
             message: 'User logged in successfully ',
             token: resp.session_token,
-            user_id: resp.user_id
+            user_id: resp.user_id,
+            user
         })
     } catch (err) {
         console.log(err);

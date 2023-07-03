@@ -3,11 +3,18 @@ import { ref } from 'vue';
 export const isLoggedIn = ref(!!localStorage.getItem('token'));
 
 
-export const setLoggedIn = (value, user_id) => {
-    isLoggedIn.value = value;
-    localStorage.setItem('token', value ? 'true' : '');
-    localStorage.setItem('user_id', user_id || '');
+// export const setLoggedIn = (value, user_id) => {
+//     isLoggedIn.value = value;
+//     localStorage.setItem('token', value ? 'true' : '');
+//     localStorage.setItem('user_id', user_id || '');
     
+// };
+
+export const setLoggedIn = (value, user_id) => {
+  isLoggedIn.value = value;
+  localStorage.setItem('token', value || '');
+  localStorage.setItem('user_id', user_id || '');
+  
 };
 
 export const logout = async () => {
@@ -59,7 +66,24 @@ export const fetchUserInfo = async () => {
 }
 
 
+export const validateToken = async () => {
+  const res = await fetch('http://localhost:3000/api/auth/authenticate', {
+    method: 'POST',
+    headers: {
+      'Content-Type' : 'application/json'
+    },
+    body: JSON.stringify({
+      session_token: localStorage.getItem('token')
+    })
+  }).then(res => res.json());
+  
+  if (!res.success) {
+    setLoggedIn(false, '');
+  }
+};
 
+// Llamar a esta función cuando inicie la aplicación
+validateToken();
 
 
 
