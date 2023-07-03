@@ -1,8 +1,8 @@
 import { Sequelize, DataTypes } from 'sequelize';
 import sequelize from '../config/db.config.js';
 
-const Client = sequelize.define('Client', {
-  id_Client: {
+const User = sequelize.define('User', {
+  id_User: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true
@@ -15,8 +15,8 @@ const Client = sequelize.define('Client', {
   prenom: DataTypes.STRING,
   userType: DataTypes.INTEGER
 }, {
-  tableName: 'Clients',
+  tableName: 'Users',
   timestamps: false
 });
 
-export default Client;
+export default User;
