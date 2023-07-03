@@ -93,7 +93,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2023 Copyright:
+    © 2023 OPTI-GESTION
   </div>
   <!-- Copyright -->
 </footer>
@@ -112,7 +112,8 @@ export default {
 <style scoped>
 
 #section {
-  background-color: #588B8B;  
+  background-color: #588B8B; 
+  margin-top: 4%; 
 }
 
 #text {
