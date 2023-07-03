@@ -46,15 +46,17 @@
       <table class="table table-bordered table-secondary" id="secondTable">
         <thead>
           <tr>
-            <th scope="col">Nom Banque/Agence</th>
+            <th scope="col">Nom Banque</th>
+            <th scope="col">Taux</th>
             <th scope="col">Date</th>
-            <th scope="col">Consulté</th>
+            <th scope="col">Décision</th>
             <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="bank in banks" :key="bank.id">
             <td>{{ bank.name }}</td>
+            <td>2.5%</td>
             <td>{{ bank.date }}</td>
             <td>Non</td>
             <td>
