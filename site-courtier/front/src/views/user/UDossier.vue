@@ -3,28 +3,28 @@
         Retour a UDashboard 
     </div>
     <div>
-      <DCardCopie>
+      <DCard>
         
-      </DCardCopie>
+      </DCard>
   
-      <DTableCopie>
+      <DTable>
         
-      </DTableCopie>
+      </DTable>
     </div>
   </template>
   
   <script>
   // @ is an alias to /src
-  import DCardCopie from '@/components/Dossier/Visu-Client/DCardCopie.vue'
-  import DTableCopie from '@/components/Dossier/Visu-Client/DTableCopie.vue'
+  import DCardfrom '@/components/Dossier/DCard.vue'
+  import DTable from '@/components/Dossier/DTable.vue'
   
   export default 
   {
     name: 'CDossier',
     components: {
-      DCardCopie,
-      DTableCopie    
+      DCard,
+      DTable    
     },
   }
   </script>
-  
+ 

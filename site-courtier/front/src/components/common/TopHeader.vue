@@ -58,7 +58,7 @@ const handleLogout = async () => {
     </div>
   </div>
 </nav>
-<router-view></router-view>
+<router-view> </router-view>
 </template>
 <style scoped >
 @media all and (min-width: 992px) {
