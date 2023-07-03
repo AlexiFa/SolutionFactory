@@ -23,9 +23,8 @@ export default
 {
   name: 'CDossier',
   components: {
-     DCard,
-     DTable
-    
+    DCard,
+    DTable    
   },
 }
 </script>

@@ -5,12 +5,18 @@ import RegisterView from '../views/RegisterView.vue'
 import CDossier from '../views/courtier/CDossier.vue'
 import ClientForm from '../views/user/ClientForm.vue'
 import CDashboard from '../views/courtier/CDashboard.vue'
+import UDashboard from '../views/user/UDashboard.vue'
+import ManageAccount from '../components/ManageAccount.vue'
+import UDossier from '../views/user/UDossier.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    // meta: {
+    //   requiresAuth: true
+    // }
   },
   {
     path: '/about',
@@ -46,13 +52,51 @@ const routes = [
     path: '/CDashboard',
     name: 'CDashboard',
     component: CDashboard
-  }
+  },
+  {
+    path:"/UDossier",
+    name:"UDossier",
+    component: UDossier
+  },
+  {
+    path: '/UDashboard',
+    name: 'UDashboard',
+    component: UDashboard
+  },
+  {
+    path: '/ManageAccount',
+    name: 'ManageAccount',
+    component: ManageAccount
+  },
+  
+  
   
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHistory(),
   routes
 })
+
+router.beforeEach(async (to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)){
+    //Authentification check
+    const token = localStorage.getItem('token')
+
+    if (token) {
+      return next()
+    }
+    return next('/login')
+  }
+
+  next()
+})
+
+// router.beforeEach((to, from, next) => {
+//   if (to.matched.some(record => record.meta.requiresAuth)){
+//     //Authentification check
+//     const
+//   }
+// })
 
 export default router
