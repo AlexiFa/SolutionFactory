@@ -11,7 +11,7 @@
       <div class="mb-3">
         <label for="formFile" class="form-label"></label>
         <input class="form-control" type="file" id="formFile" ref="fileInput" style="display: none;" @change="submitFile">
-        <button id="envoyer" class="btn btn-dark btn-sm" @click="openFileInput">Envoyer un document</button>
+        <button id="envoyer" class="btn btn-dark btn-sm" @click="openFileInput">Ajouter un document</button>
       </div>
     </div>
 
@@ -31,12 +31,16 @@
             <td>{{ file.date }}</td>
             <td>Non</td>
             <td>
-              <button class="btn btn-dark btn-sm" @click="deleteFile(file)">Supprimer</button>
+              <button class="btn btn-dark btn-sm" @click="deleteFile(file)">Retirer</button>
             </td>
           </tr>
         </tbody>
       </table>
+      <button id="send" class="btn btn-dark btn-sm" >Envoyer</button>
     </div>
+
+   
+    
 
     <div>
       <button id="add" class="btn btn-dark btn-sm" @click="openForm">Ajouter une proposition</button>
@@ -56,11 +60,11 @@
         <tbody>
           <tr v-for="bank in banks" :key="bank.id">
             <td>{{ bank.name }}</td>
-            <td>2.5%</td>
+            <td>{{ bank.taux }}</td>
             <td>{{ bank.date }}</td>
             <td>Non</td>
             <td>
-              <button class="btn btn-dark btn-sm" @click="deleteBank(bank)">Supprimer</button>
+              <button class="btn btn-dark btn-sm" @click="deleteBank(bank)">Retirer</button>
             </td>
           </tr>
         </tbody>
@@ -76,8 +80,12 @@
           <div class="modal-body">
             <form @submit.prevent="addBank">
               <div class="mb-3">
-                <label for="bankName" class="form-label">Nom Banque/Agence:</label>
+                <label for="bankName" class="form-label">Nom Banque</label>
                 <input type="text" class="form-control" id="bankName" v-model="bankName" required>
+              </div>
+              <div class="mb-3">
+                <label for="bankRate" class="form-label">Taux</label>
+                <input type="text" class="form-control" id="bankRate" v-model="bankRate" required>
               </div>
               <div class="modal-footer">
                 <button type="submit" class="btn btn-dark" id="ajouter">Ajouter</button>
@@ -99,7 +107,8 @@ export default {
       files: [],
       banks: [],
       showForm: false,
-      bankName: ''
+      bankName: '',
+      bankRate: ''
     };
   },
   methods: {
@@ -142,10 +151,12 @@ export default {
       const bank = {
         id: Date.now(),
         name: this.bankName,
+        taux: this.bankRate,
         date: new Date().toLocaleDateString()
       };
       this.banks.push(bank);
       this.bankName = '';
+      this.bankRate = '';
       this.showForm = false;
     },
     deleteBank(bank) {
@@ -182,6 +193,15 @@ export default {
   margin-right: 5px;
 }
 
+#send{
+  background-color: #588B8B;
+  color: black;
+  border-radius: 10px;
+  float: right;
+  margin-top: -2px;
+  margin-bottom: 10px;
+}
+
 #envoyer {
   background-color: #E9C46A;
   color: black;
@@ -194,9 +214,10 @@ export default {
   background-color: #E9C46A;
   color: black;
   border-radius: 10px;
-  float: right;
-  margin-top: 10px;
+  float: left;
+  margin-top: 70px;
   margin-bottom: 10px;
+  
 }
 
 #ajouter{
