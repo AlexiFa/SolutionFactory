@@ -5,20 +5,20 @@ import sequelize from '../src/config/db.config.js';
 async function seed() {
   // Données pour test
   const users = [
-    { nom: 'John Doe', mail: 'john@mail.com', login: 'john', password: '123456', telephone: '1234567890', prenom: 'John', userType: 'CLIENT' },
-    { nom: 'Jane Doe', mail: 'jane@mail.com', login: 'jane', password: 'abcdef', telephone: '2345678901', prenom: 'Jane', userType: 'CLIENT' },
-    { nom: 'Bob Smith', mail: 'bob@mail.com', login: 'bob', password: '123abc', telephone: '3456789012', prenom: 'Bob', userType: 'CLIENT' },
-    { nom: 'Alice Johnson', mail: 'alice@mail.com', login: 'alice', password: 'abc123', telephone: '4567890123', prenom: 'Alice', userType: 'CLIENT' },
-    { nom: 'Charlie Brown', mail: 'charlie@mail.com', login: 'charlie', password: 'password', telephone: '5678901234', prenom: 'Charlie', userType: 'CLIENT' },
-    { nom: 'Courtier Courtier', mail: 'courtier@mail.com', login: 'courtier@gmail.com', password: 'Courtier123!', telephone: '', prenom: '', userType: 'COURTIER' },
+    { id_User: 'user-test-c6da5e99-698e-487a-9d11-rg54grgw', nom: 'John Doe', mail: 'john@mail.com', login: 'john', password: '123456', telephone: '1234567890', prenom: 'John', userType: 'CLIENT' },
+    { id_User: 'user-test-c6da5e99-698e-487a-9d11-adfddafd', nom: 'Jane Doe', mail: 'jane@mail.com', login: 'jane', password: 'abcdef', telephone: '2345678901', prenom: 'Jane', userType: 'CLIENT' },
+    { id_User: 'user-test-c6da5e99-698e-487a-9d11-hwthwrfwe', nom: 'Bob Smith', mail: 'bob@mail.com', login: 'bob', password: '123abc', telephone: '3456789012', prenom: 'Bob', userType: 'CLIENT' },
+    { id_User: 'user-test-c6da5e99-698e-487a-9d11-rhwtw52gwrg', nom: 'Alice Johnson', mail: 'alice@mail.com', login: 'alice', password: 'abc123', telephone: '4567890123', prenom: 'Alice', userType: 'CLIENT' },
+    { id_User: 'user-test-c6da5e99-698e-487a-9d11-rgwrgrt5g5', nom: 'Charlie Brown', mail: 'charlie@mail.com', login: 'charlie', password: 'password', telephone: '5678901234', prenom: 'Charlie', userType: 'CLIENT' },
+    { id_User: 'user-test-c6da5e99-698e-487a-9d11-61bb6bfbc603', nom: 'Courtier Courtier', mail: 'courtier@mail.com', login: 'courtier@gmail.com', password: 'Courtier123!', telephone: '', prenom: '', userType: 'COURTIER' },
   ];
 
   const dossiers = [
-    { Id_Dossier: 1, id_User: 1 },
-    { Id_Dossier: 2, id_User: 2 },
-    { Id_Dossier: 3, id_User: 3 },
-    { Id_Dossier: 4, id_User: 4 },
-    { Id_Dossier: 5, id_User: 5 },
+    { Id_Dossier: 1, id_User: 'user-test-c6da5e99-698e-487a-9d11-61bb6bfbc603' },
+    { Id_Dossier: 2, id_User: 'user-test-c6da5e99-698e-487a-9d11-61bb6bfbc603' },
+    { Id_Dossier: 3, id_User: 'user-test-c6da5e99-698e-487a-9d11-61bb6bfbc603' },
+    { Id_Dossier: 4, id_User: 'user-test-c6da5e99-698e-487a-9d11-61bb6bfbc603' },
+    { Id_Dossier: 5, id_User: 'user-test-c6da5e99-698e-487a-9d11-61bb6bfbc603' },
   ];
 
   const documents = [
@@ -26,13 +26,13 @@ async function seed() {
   ];
 
   const addresses = [
-    { address1: '123 Main St', city: 'Townsville', postalCode: '12345', user_id: 1 },
+    { address1: '123 Main St', city: 'Townsville', postalCode: '12345', user_id: 'user-test-c6da5e99-698e-487a-9d11-61bb6bfbc603' },
   ];
 
   for (const user of users) {
     await sequelize.query(
-      'INSERT INTO Users (nom, mail, login, password, telephone, prenom, userType) VALUES (?, ?, ?, ?, ?, ?, ?)',
-      { replacements: [user.nom, user.mail, user.login, user.password, user.telephone, user.prenom, user.userType] }
+      'INSERT INTO Users (id_User, nom, mail, login, password, telephone, prenom, userType) VALUES (?,?, ?, ?, ?, ?, ?, ?)',
+      { replacements: [user.id_User, user.nom, user.mail, user.login, user.password, user.telephone, user.prenom, user.userType] }
     );
   }
 

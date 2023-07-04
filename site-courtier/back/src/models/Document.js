@@ -17,6 +17,7 @@ const Document = sequelize.define('Document', {
   timestamps: false
 });
 
+Dossier.hasMany(Document, { foreignKey: 'Id_Dossier' });
 Document.belongsTo(Dossier, { foreignKey: 'Id_Dossier' });
 
 export default Document;

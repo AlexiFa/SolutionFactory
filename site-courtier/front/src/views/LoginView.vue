@@ -30,8 +30,9 @@ const Login = async () => {
         localStorage.setItem('user_id', res.user_id)
         
         isLoggedIn.value = true; 
-        router.push('/')
         window.location.reload();
+        router.push('/')
+        
     } else{
         alert(res.message)
     }
