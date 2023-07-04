@@ -11,6 +11,7 @@ async function seed() {
     { id_User: 'user-test-c6da5e99-698e-487a-9d11-rhwtw52gwrg', nom: 'Alice Johnson', mail: 'alice@mail.com', login: 'alice', password: 'abc123', telephone: '4567890123', prenom: 'Alice', userType: 'CLIENT' },
     { id_User: 'user-test-c6da5e99-698e-487a-9d11-rgwrgrt5g5', nom: 'Charlie Brown', mail: 'charlie@mail.com', login: 'charlie', password: 'password', telephone: '5678901234', prenom: 'Charlie', userType: 'CLIENT' },
     { id_User: 'user-test-c6da5e99-698e-487a-9d11-61bb6bfbc603', nom: 'Courtier Courtier', mail: 'courtier@mail.com', login: 'courtier@gmail.com', password: 'Courtier123!', telephone: '', prenom: '', userType: 'COURTIER' },
+    { id_User: 'user-test-8d4f0084-b3ef-4895-be35-f5e0efe6f9ef', nom: 'seb seb', mail: 'seb@mail.com', login: 'seb@gmail.com', password: 'Pestana123!', telephone: '', prenom: '', userType: 'CLIENT' },
   ];
 
   const dossiers = [
@@ -58,7 +59,7 @@ async function seed() {
     );
   }
 
-  console.log('Datos de prueba insertados con éxito');
+  console.log('Les données de test ont été intégrées correctement');
 }
 
 seed();
