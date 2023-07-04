@@ -8,11 +8,8 @@
 
           <div name="Dossier-Client" class="dossier-client">
             
-            <div style="width:30%;">
+            <div style="width:50%;display: flex;justify-content: center;">
                 <DCardTitleDos :dossier="item"></DCardTitleDos>
-            </div> 
-            <div style="width:30%;">
-                <DCardSuivi></DCardSuivi>
             </div>
             <!-- cette carte ci-dessous est le futur-bouton vers le dossier detaillé-->
             <div class="btn dossier-details" role="button" @click="$router.push({ name: 'UDossier', params: { dossierId: item.Id_Dossier } })">
@@ -25,14 +22,13 @@
 </template>
 <script>
 // @ is an alias to /src
-import DCardSuivi from '@/components/Dashboard/DCardSuivi.vue'
 import DCardTitleDos from '@/components/Dashboard/DCardTitleDos.vue'
 import DCardContent from '@/components/Dashboard/DCardContent.vue'
 import axios from 'axios'
 export default {
   name: 'CDashboard',
   components: {
-    DCardSuivi, DCardContent, DCardTitleDos
+    DCardContent, DCardTitleDos
   },
   data() {
     return {
@@ -61,7 +57,7 @@ export default {
 .dossier-client {
   display: flex; 
   flex-direction: row;
-  align-items: stretch;
+  align-items: center;
   justify-content: space-between; 
   height: 200px;
   padding: 0% 0% 0% 2%;
@@ -72,7 +68,7 @@ export default {
 }
 .dossier-details{
     height: 100%;
-    width: 30%;
+    width: 50%;
     border-left: 1px solid;
     border-radius: 0px;
   }
