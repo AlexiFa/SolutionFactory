@@ -1,5 +1,6 @@
 import { Client } from 'stytch';
 import dotenv from 'dotenv';
+//import User from '../models/User.js';
 
 dotenv.config()
 
@@ -60,6 +61,17 @@ export const searchUser = async (req, res) => {
         })
     }
 }
+
+/*export const findOne = (req, res) => {
+    const id = req.params.id;
+    User.findByPk(id).then(data => {
+        res.send(data);
+    }).catch(err => {
+        res.status(500).send({
+            message: "erreur requete SQL"
+        });
+    });
+}*/
 
 /*export const getUserInfoById = async (req, res) => {
     const { user_id } = req.params.id;
