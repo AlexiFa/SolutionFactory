@@ -20,31 +20,6 @@
     </div>
     </div>
 </template>
-<style scoped>
- .dossier-client {
-  display: flex; 
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: space-between; 
-  height: 200px;
-  padding: 0% 0% 0% 2%;
-  background: white; 
-  border: 2px solid black;
-  border-radius: 20px;
-  margin-bottom: 5%;
-}
-.dossier-details{
-    height: 100%;
-    width: 30%;
-    border-left: 1px solid;
-    border-radius: 0px;
-  }
-  .dossier-details:hover{
-    background-color:white;
-    border:3px solid black;
-    border-radius: 0px;
-  }
-</style>
 
 <script>
   // @ is an alias to /src
@@ -77,4 +52,32 @@
     }
   }
 </script>
+
+<style scoped>
+ .dossier-client {
+  display: flex; 
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between; 
+  height: 200px;
+  padding: 0% 0% 0% 2%;
+  background: white; 
+  border: 2px solid black;
+  border-radius: 20px;
+  margin-bottom: 5%;
+}
+.dossier-details{
+    height: 100%;
+    width: 30%;
+    border-left: 1px solid;
+    border-radius: 0px;
+  }
+  .dossier-details:hover{
+    background-color:white;
+    border:3px solid black;
+    border-radius: 0px;
+  }
+</style>
+
+
  
