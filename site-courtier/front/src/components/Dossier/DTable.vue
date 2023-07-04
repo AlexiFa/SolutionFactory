@@ -103,21 +103,7 @@
       </div>
     </div>
 
-    <div class="center-table">
-      <table class="table table-bordered table-secondary empty-table">
-        <thead>
-          <tr>
-            <th scope="col">Column 1</th>
-            <th scope="col">Column 2</th>
-            <th scope="col">Column 3</th>
-            <th scope="col">Column 4</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!--  empty table -->
-        </tbody>
-      </table>
-    </div>
+   
 
   </div>
 </template>

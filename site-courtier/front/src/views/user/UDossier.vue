@@ -2,6 +2,7 @@
     <div class="btn" role="button" onclick="window.location.href='/UDashboard'">
         Retour a UDashboard 
 
+        <h1>Afficher le tableau des documents du courtier + afficher tableau des propositions du courtier</h1>
        
     </div>
    

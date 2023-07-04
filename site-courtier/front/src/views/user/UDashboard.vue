@@ -1,7 +1,7 @@
 <template>
     <div style="display: flex; flex-direction:column ;background-color: #E9C46A;padding: 5%;" >
         <div style="margin-bottom: 5%; color: black;">
-          <h1>Menu des Dossiers en cours de traitement</h1>
+          <h1>Dossiers en cours de traitement</h1>
         </div>
         <!-- modele card dossier du point de vue client -->
         <div name="Dossier-Client" class="dossier-client">
