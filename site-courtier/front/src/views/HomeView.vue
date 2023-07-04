@@ -14,9 +14,9 @@
   position: absolute;
   z-index: 1;
   top: -300px;
-  right:-300px;
+  right:-350px;
   height: 800px;
-  width:1000px;
+  width:1100px;
   background-color: #588b8b;
   border-radius:1100px;
   border: 1px solid black;
@@ -25,9 +25,9 @@
   position: absolute;
   z-index: 1;
   bottom: -300px;
-  left: -300px;
+  left: -350px;
   height: 800px;
-  width:1000px;
+  width:1100px;
   background-color: #e9c46a;
   border-radius: 1100px;
   border: 1px solid black;
