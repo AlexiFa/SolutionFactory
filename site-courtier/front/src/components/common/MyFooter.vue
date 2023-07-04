@@ -1,6 +1,6 @@
 <template>
     <!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted">
+<footer class="text-center text-lg-start bg-light text-muted" style="border-top: 1px solid #f4f4f6; outline: 0.5px solid #2a2d34;">
   <!-- Section: Social media -->
    <section id="section" class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
     <!-- Left -->
@@ -92,7 +92,7 @@
   <!-- Section: Links  -->
 
   <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+  <div class="text-center p-4" style="background-color: #f4f4f6;">
     © 2023 OPTI-GESTION
   </div>
   <!-- Copyright -->
