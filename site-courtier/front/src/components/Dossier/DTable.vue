@@ -13,7 +13,9 @@
         <input class="form-control" type="file" id="formFile" ref="fileInput" style="display: none;" @change="submitFile">
         <button id="envoyer" class="btn btn-dark btn-sm" @click="openFileInput">Ajouter un document</button>
       </div>-->
-    </div>-
+    </div>
+
+    <br>
 
     <div>
       <table class="table table-bordered table-secondary" id="input">
