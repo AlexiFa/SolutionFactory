@@ -10,6 +10,7 @@ export const getDossierClient = async (req, res) => {
 
     Dossier.findAll({where:{id_User:user_id}}).then(data =>{
         res.json(data)
+        
     }).catch(err =>{
         console.log(err);
         res.status(500).json({error:"erreur requete SQL"})

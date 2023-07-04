@@ -42,7 +42,7 @@ export const getUserDocuments = async (req, res) => {
         // const documents = await Document.findAll({ where: { Id_Dossier: dossier.Id_Dossier } });
         // const dossier = await Dossier.findOne({ where: { id_User: user_id} });
 
-        const dossier = await Dossier.findOne({ where: { id_User: 2} });
+        const dossier = await Dossier.findOne({ where: { id_User: user_id} });
         const documents = await Document.findAll({ where: { Id_Dossier: 7 } });
 
 

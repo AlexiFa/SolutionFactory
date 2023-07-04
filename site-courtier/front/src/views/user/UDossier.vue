@@ -61,12 +61,14 @@
   //import DCard from '@/components/Dossier/DCard.vue'
   //import DTable from '@/components/Dossier/DTable.vue'
   import axios from 'axios';
+  import UDashboard from './UDashboard.vue';
   export default 
 
   {
     data() {
     return {
       files: [],
+      items: UDashboard.data.items
       
     }},
 
