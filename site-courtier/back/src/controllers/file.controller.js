@@ -35,25 +35,35 @@ import User from "../models/User.js";
 // import Document from '../models/Document.js';
 // import Dossier from '../models/Dossier.js';
 
-export const getUserDocuments = async (req, res) => {
-    const { user_id } = req.query;
-    try {
+// export const getUserDocuments = async (req, res) => {
+//     const { user_id } = req.query;
+//     try {
 
-        // const documents = await Document.findAll({ where: { Id_Dossier: dossier.Id_Dossier } });
-        // const dossier = await Dossier.findOne({ where: { id_User: user_id} });
+//         // const documents = await Document.findAll({ where: { Id_Dossier: dossier.Id_Dossier } });
+//         // const dossier = await Dossier.findOne({ where: { id_User: user_id} });
 
-        const dossier = await Dossier.findOne({ where: { id_User: user_id} });
-        const documents = await Document.findAll({ where: { Id_Dossier: 7 } });
+//         const dossier = await Dossier.findOne({ where: { id_User: user_id} });
+//         const documents = await Document.findAll({ where: { Id_Dossier: 7 } });
 
 
         
-        // Devolver los documentos en formato JSON.
-        res.json(documents);
+//         // Devolver los documentos en formato JSON.
+//         res.json(documents);
+//     } catch (err) {
+//         console.log(err);
+//         res.json({ success: false, message: 'Error al obtener los documentos del usuario', error: err });
+//     }
+// };
+export const getUserDocuments = async (req, res) => {
+    const { dossierId } = req.query;
+    try {
+      const documents = await Document.findAll({ where: { Id_Dossier: dossierId } });
+      res.json(documents);
     } catch (err) {
-        console.log(err);
-        res.json({ success: false, message: 'Error al obtener los documentos del usuario', error: err });
+      console.log(err);
+      res.json({ success: false, message: 'Error al obtener los documentos del usuario', error: err });
     }
-};
+  };
 
 export const serveDocument = async (req, res) => {
     try {

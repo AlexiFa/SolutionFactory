@@ -78,14 +78,14 @@
     },
     
     async created() {
-    const user_id = localStorage.getItem('user_id')
+      const dossierId = this.$route.params.dossierId;
     try {
-            const response = await axios.get(`http://localhost:3000/api/documents/userDocuments?user_id=${user_id}`);
-            this.files = response.data;
+          const response = await axios.get(`http://localhost:3000/api/documents/userDocuments?dossierId=${dossierId}`);
+          this.files = response.data;
         } catch (error) {
-            console.log(error);
+          console.log(error);
         }
-  },
+    },
   }
   </script>
 
