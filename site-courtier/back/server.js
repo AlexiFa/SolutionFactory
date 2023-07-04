@@ -6,7 +6,7 @@ import authRoutes from '../back/src/routes/auth.routes.js'
 import userRoutes from '../back/src/routes/user.routes.js'
 import addressRoutes from '../back/src/routes/address.routes.js'
 import dossierRoutes from '../back/src/routes/dossier.routes.js'
-
+import formRoutes from '../back/src/routes/form.routes.js'
 
 dotenv.config()
 
@@ -21,12 +21,9 @@ app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/addresses', addressRoutes);
 app.use('/api/dossier', dossierRoutes);
+app.use('/api/forms', formRoutes);
+
 
 app.listen(port, () =>{
     console.log(`Server has started on port ${port}`)
 })
-
-
-
-
-

@@ -61,50 +61,50 @@ function togglePassword(id) {
 
 <template>
 
-    <div class="container card" style="padding: 1%;background-color: #2A2D34;">
+    <div id="div" class="container card" style="padding: 1%;background-color: #2A2D34;">
         <div class="row">
         <div class="container card col" style="padding: 2%;width: 40%;background-color: #588B8B;margin: 1%;">
             <form class="row g-5" @submit.prevent="Register">
             <div class="col-12 mar2">
-                <p class="h1">Register</p>
+                <p class="h2">S'enregistrer</p>
             </div>
-            <div class="col-md-6 mar2">
+            <div id="name" class="col-md-6 mar2">
                 <div class="form-floating">
                     <input type="Name" v-model="first_name" class="form-control" id="inputFirstNameLG" placeholder="First and last name">
-                    <label for="inputFirstNameLG">First name </label>
+                    <label for="inputFirstNameLG">Prénom </label>
                 </div>
             </div>
-            <div class="col-md-6 mar2">
+            <div  id="name" class="col-md-6 mar2">
                 <div class="form-floating">
                     <input type="text" v-model="last_name" class="form-control" id="inputLastNameLG" placeholder="Phone Number">
-                    <label for="inputLastNameLG">Last name</label>
+                    <label for="inputLastNameLG">Nom</label>
                 </div>
             </div>
-            <div class="col-12 mar2">
+            <div  id="dispo" class="col-12 mar2">
                 <div class="form-floating">
-                    <input type="email" v-model="email" class="form-control" id="inputEmailRG" placeholder="Email">
+                    <input type="email" v-model="email" class="form-control" id="inputEmailRG" placeholder="Email" >
                     <label for="inputEmailLG">Email</label>
                 </div>
             </div>
-            <div class="col-12 mar2 d-flex text-center">
+            <div id="dispo" class="col-12 mar2 d-flex text-center">
                 <div class="form-floating col-12">
-                    <input type="password" v-model="password" class="form-control" id="inputPasswordRG" placeholder="*************">
-                    <label for="inputPassword">Password</label>
+                    <input type="password" v-model="password" class="form-control" id="inputPasswordRG" placeholder="*************" >
+                    <label for="inputPassword">Mot de passe</label>
                 </div>
                 <i class="bi bi-eye-slash col align-self-center tglPwd" id="togglePasswordRG" @click="togglePassword('inputPasswordRG')"></i>
             </div>
-            <div class="col-12 mar2 d-flex text-center">
+            <div id="dispo" class="col-12 mar2 d-flex text-center">
                 <div class="form-floating col-12">
-                    <input type="password" v-model="conf_password" class="form-control" id="inputConfirmPasswordRG" placeholder="*************">
-                    <label for="inputConfirmPassword">Confirm Password</label>
+                    <input type="password" v-model="conf_password" class="form-control" id="inputConfirmPasswordRG" placeholder="*************" >
+                    <label for="inputConfirmPassword">Confirmer le mot de passe</label>
                 </div>
                 <i class="bi bi-eye-slash col align-self-center tglPwd" id="togglePasswordRG" @click="togglePassword('inputConfirmPasswordRG')"></i>
             </div>
             <div class="col-12">
-                <button type="submit" value="Register" class="btn btn-primary fs-2" style="background-color: #E9C46A;border-color: #588B8B;color: black;">Sign up</button>
+                <button type="submit" value="Register" class="btn btn-dark btn-lg" style="background-color: #E9C46A;border-color: #588B8B;color: black;">S'enregistrer</button>
             </div>
         </form>
-        <router-link to="/login" style="margin-top: 3%;color: black;">already have an account ?</router-link>
+        <router-link to="/login" style="margin-top: 3%;color: black; margin-top: 4%;">Vous avez déjà un compte ?</router-link>
         </div>
         <div class="container col d-flex flex-column justify-content-center" style="margin: 1%;">
             <img src="../assets/logo.png" alt="logo">
@@ -112,3 +112,31 @@ function togglePassword(id) {
         </div>
     </div>
 </template>
+
+<style scoped>
+button{
+  background-color: #E9C46A;
+  color: black;
+  border-radius: 10px;
+  margin-top: -4%;
+}
+
+img{
+    width: auto;
+    height: 55%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#name{
+    margin-top: 2%;
+}
+
+#dispo{
+    margin-top: 2%;
+}
+
+#div{
+    margin-top: 4%;
+}
+</style>

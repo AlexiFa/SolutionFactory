@@ -1,7 +1,7 @@
 <template>
     <div style="display: flex; flex-direction:column ;background-color: #588B8B;padding: 5%;" >
       <div style="margin-bottom: 5%; color: black;">
-        <h1>Menu des Dossiers à traiter</h1>
+        <h1>Dossiers à traiter</h1>
       </div>
       <!-- modele card dossier du point de vue courtier -->
       <div v-for="item in items" :key="item.id">

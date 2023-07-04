@@ -91,7 +91,8 @@ h3{
   display: block;
   margin-left: 60%; 
   margin-right: 60%;
-  margin-top: 15%;
+  margin-top: 7%;
+  margin-bottom: 7%;
   width: 35%;
 }
 

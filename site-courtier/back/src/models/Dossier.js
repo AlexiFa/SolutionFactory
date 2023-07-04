@@ -13,6 +13,7 @@ const Dossier = sequelize.define('Dossier', {
   timestamps: false
 });
 
+User.hasMany(Dossier, { foreignKey: 'id_User' });
 Dossier.belongsTo(User, { foreignKey: 'id_User' });
 
 export default Dossier;

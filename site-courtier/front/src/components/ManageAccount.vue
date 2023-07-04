@@ -49,18 +49,18 @@ const handleLogout = async () => {
 			<div class="card h-100">
 				<div class="card-body">
 					<div class="account-settings">
-						<div class="user-profile">
+						<div id="profile" class="user-profile">
 							<div class="user-avatar">
 								<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
 							</div>
 							<h5 class="user-name">{{ userInfo.name.first_name }}</h5>
 							<h6 class="user-email">{{ userInfo.emails.email }}</h6>
 						</div>
-						<button @click="handleLogout" class="btn btn-danger">Logout</button>
-						<div class="about">
+						<button id="logout" @click="handleLogout" class="btn btn-outline-danger">Se deconnecter</button>
+						<!---<div class="about">
 							<h5>About</h5>
 							<p>I'm {{userInfo.name.first_name}}. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
-						</div>
+						</div>-->
 					</div>
 				</div>
 			</div>
@@ -238,6 +238,18 @@ body {
 }
 
 #card{
+	margin-top: 60px;
+}
+
+#logout{
+	background-color: #E9C46A;
+	color: black;
+	border-radius: 10px;
+	margin-right: 10px;
+	margin-top: 30px;
+}
+
+#profile{
 	margin-top: 60px;
 }
 
