@@ -113,7 +113,7 @@ export default {
 
 #section {
   background-color: #588B8B; 
-  margin-top: 4%; 
+  margin-top: 0%; 
 }
 
 #text {
