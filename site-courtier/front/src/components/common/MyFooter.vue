@@ -82,7 +82,7 @@
             <i ></i>
             optigestion@gmail.com
           </p>
-          <p><i ></i> + 33 07 56 45 97 88</p>
+          <p><i ></i> + 33 07 56 45 97 88 </p>
         </div>
         <!-- Grid column -->
       </div>

@@ -1,7 +1,11 @@
 <template>
     <div class="container-fluid">
         
-            <h2>Formulaire</h2>
+        <br><br><br>
+
+        <div class="container-card">
+            <h1 class="text-center">Nouveau dossier</h1>
+            <br>
             <div class="row">
                 <div class="col">
                 
@@ -10,16 +14,16 @@
                     <form class="row g-3" @submit.prevent="submitForm">
                         
                         <div class="col-12">
-                            <br><br><br>
-                            <label for="inputAddress" class="form-label"><strong>Addresse</strong></label>
-                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" v-model="form.address">
+                            
+                            <label for="inputAddress" class="form-label"><strong>Adresse</strong></label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Adresse" v-model="form.address">
                         </div>
                         <div class="col-12">
-                            <label for="inputAddress2" class="form-label"><strong>Complément d'addresse</strong></label>
-                            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartement, studio, ou étage" v-model="form.compladdress">
+                            <label for="inputAddress2" class="form-label"><strong>Complément d'adresse</strong></label>
+                            <input type="text" class="form-control" id="inputAddress2" placeholder="Appartement, studio, ou étage" v-model="form.compladdress">
                         </div>
-                        <div class="col-md-6">
-                            <label for="inputCity" class="form-label"><strong>Ville</strong></label>
+                        <div class="col-md-5" >
+                            <label for="inputCity" class="form-label" ><strong>Ville</strong></label>
                             <input type="text" class="form-control" id="inputCity" v-model="form.ville">
                         </div>
                         <div class="col-md-4">
@@ -47,13 +51,13 @@
                             </select>
                             <br>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <label for="inputZip" class="form-label"><strong>Code Postale</strong></label>
                             <input type="text" class="form-control" id="inputZip" v-model="form.codepostal">
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-5" style="margin-left: auto; margin-right: auto; margin-top: -1%;">
                             <label for="inputNum" class="form-label"><strong>N° Téléphone</strong></label>
-                            <input type="text" class="form-control" id="inputNum" v-model="form.telefone">
+                            <input type="text" class="form-control" id="inputNum" placeholder="xx xx xx xx xx" v-model="form.telefone">
                         </div>
 
                         <div class="mb-1">
@@ -77,19 +81,23 @@
                             <input class="form-control" v-on:change="handleFileUpload($event)" type="file" id="relevecompte" multiple accept=".pdf,.jpg,.jpeg,.png,.odt,.doc " />
                         </div>
 
-
                         <div class="col-12">
                             <button id="send" type="submit" class="btn btn-dark" >Envoyer</button>
                         </div>
                         <br>
                     </form>
 
+                   
 
                 </div>
                 <div class="col">
                 
                 </div>
             </div>
+
+        </div>
+
+        <br><br><br>
         
     </div>
 
@@ -165,12 +173,25 @@ export default {
 
 <style scoped>
 
-    
+    .container-card {
+        margin-left: 20%;
+        margin-right: 20%;
+        padding: 2%;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+   .container-fluid{
+    background-color: #E9C46A;
+
+
+   }
 
     #send {
         background-color: #588B8B;
         color: black;
         border-color: #2A2D34;
+        margin-top: -10%;
     }
 
  
