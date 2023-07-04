@@ -54,7 +54,7 @@ const routes = [
     component: CDashboard
   },
   {
-    path:"/UDossier",
+    path:"/UDossier/:dossierId",
     name:"UDossier",
     component: UDossier
   },
@@ -92,11 +92,6 @@ router.beforeEach(async (to, from, next) => {
   next()
 })
 
-// router.beforeEach((to, from, next) => {
-//   if (to.matched.some(record => record.meta.requiresAuth)){
-//     //Authentification check
-//     const
-//   }
-// })
+
 
 export default router

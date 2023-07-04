@@ -5,7 +5,9 @@
         </div>
         <!-- modele card dossier du point de vue client -->
         <div v-for="item in items" :key="item.id">
+
           <div name="Dossier-Client" class="dossier-client">
+            
             <div style="width:30%;">
                 <DCardTitleDos :dossier="item"></DCardTitleDos>
             </div> 
@@ -13,9 +15,10 @@
                 <DCardSuivi></DCardSuivi>
             </div>
             <!-- cette carte ci-dessous est le futur-bouton vers le dossier detaillé-->
-            <div class="btn dossier-details" role="button" onclick="window.location.href='/UDossier'">
+            <div class="btn dossier-details" role="button" @click="$router.push({ name: 'UDossier', params: { dossierId: item.Id_Dossier } })">
                 <DCardContent></DCardContent>
             </div>
+          
           </div>
         </div>
     </div>
@@ -43,12 +46,13 @@ export default {
     fetchDossiers() {
       const user_id = localStorage.getItem('user_id')
       axios.get(`http://localhost:3000/api/dossier/getdossierclient?user_id=${user_id}`).then(response => {
+        console.log(response.data);
         this.items = response.data
-        console.log(response.data)
+  
       }).catch(error => {
         console.log(error)
       });
-    }
+    },
   }
 }
 </script>
