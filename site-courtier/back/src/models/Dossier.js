@@ -1,6 +1,6 @@
 import { Sequelize, DataTypes } from 'sequelize';
 import sequelize from '../config/db.config.js';
-import User from './Client.js';
+import User from './User.js';
 
 const Dossier = sequelize.define('Dossier', {
   Id_Dossier: {

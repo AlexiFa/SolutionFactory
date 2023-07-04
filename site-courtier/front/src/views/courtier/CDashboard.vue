@@ -19,7 +19,7 @@
     </div>
     <div>
       <ul>
-        <li v-for="item in items" :key="item.id">{{ item.name }}</li>
+        <li v-for="item in items" :key="item.id">{{ item }}</li>
       </ul>
     </div>
 </template>
@@ -54,6 +54,7 @@
   import DCardSuivi from '@/components/Dashboard/DCardSuivi.vue'
   import DCardClient from '@/components/Dashboard/DCardClient.vue'
   import DCardContent from '@/components/Dashboard/DCardContent.vue'
+  import axios from 'axios'
   export default {
     name: 'CDashboard',
     components: {
@@ -61,13 +62,7 @@
     },
     data() {
       return {
-        items: [
-          { id: 1, name: 'Bruce Lee' },
-          { id: 2, name: 'Jackie Chan' },
-          { id: 3, name: 'Chuck Norris' },
-          { id: 4, name: 'Jet Li' },
-          { id: 5, name: 'Kung Fury' }
-        ]
+        items: []
       }
     },
     mounted() {
@@ -78,6 +73,13 @@
         // put the code to get the dossier from the local database
         // create a route for dossier : '/getDossier'
         // create a controller for dossier and a function to get the dossier when we call /getDossier
+        console.log('fetching dossiers')
+        axios.get('http://localhost:3000/api/dossier/getdossier').then(response => {
+          this.items = response.data
+          console.log(response.data)
+        }).catch(error => {
+          console.log(error)
+        });
       }
     }
   }
