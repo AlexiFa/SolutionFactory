@@ -4,9 +4,10 @@
         <h1>Dossiers à traiter</h1>
       </div>
       <!-- modele card dossier du point de vue courtier -->
+      <div v-for="item in items" :key="item.id">
       <div name="Dossier-Client" class="dossier-client">
         <div style="width:30%;">
-            <DCardClient></DCardClient>
+            <DCardClient :client="item"/>
         </div> 
         <div style="width:30%;">
             <DCardSuivi></DCardSuivi>
@@ -16,6 +17,7 @@
             <DCardContent></DCardContent>
         </div>
       </div>
+    </div>
     </div>
 </template>
 <style scoped>
@@ -49,10 +51,33 @@
   import DCardSuivi from '@/components/Dashboard/DCardSuivi.vue'
   import DCardClient from '@/components/Dashboard/DCardClient.vue'
   import DCardContent from '@/components/Dashboard/DCardContent.vue'
+  import axios from 'axios'
   export default {
     name: 'CDashboard',
     components: {
       DCardSuivi, DCardClient, DCardContent
+    },
+    data() {
+      return {
+        items: []
+      }
+    },
+    mounted() {
+      this.fetchDossiers()
+    },
+    methods: {
+      fetchDossiers() {
+        // put the code to get the dossier from the local database
+        // create a route for dossier : '/getDossier'
+        // create a controller for dossier and a function to get the dossier when we call /getDossier
+        console.log('fetching dossiers')
+        axios.get('http://localhost:3000/api/dossier/getdossier').then(response => {
+          this.items = response.data
+          console.log(response.data)
+        }).catch(error => {
+          console.log(error)
+        });
+      }
     }
   }
 </script>
