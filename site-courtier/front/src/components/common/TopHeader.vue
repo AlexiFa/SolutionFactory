@@ -17,13 +17,13 @@ const handleLogout = async () => {
 
 <template>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
+  <div class="container-fluid m-2">
     <router-link to="/" class="navbar-brand">Accueil</router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-1">
         <li class="nav-item" v-if="!isLoggedIn">
           <router-link to="/login" class="nav-link active" aria-current="page">Connexion</router-link>
         </li>
@@ -46,12 +46,11 @@ const handleLogout = async () => {
         <li class="nav-item" v-if="isLoggedIn">
           <router-link to="/ManageAccount" class="nav-link">Mon compte</router-link>
         </li>
-        <li class="nav-item" v-if="isLoggedIn">
-          <button id="logout" @click="handleLogout" class="btn btn-danger">Se deconnecter</button>
-          <!-- Rajouter du css --><span v-if="userInfo" id="welcome">Bienvenue {{ userInfo.name.first_name }}</span>
-          
-        </li>
       </ul>
+      <div class="me-1 mb-2 mb-lg-0" v-if="isLoggedIn">
+        <span v-if="userInfo" id="welcome">Bienvenue {{ userInfo.name.first_name }}</span>
+        <button id="logout" @click="handleLogout" class="btn btn-danger">Se deconnecter</button> 
+      </div>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
         <button class="btn btn-dark" type="submit">Recherche</button>
@@ -84,11 +83,10 @@ button{
 }
 
 #welcome{
-  margin-left: auto;
   font-weight: bolder;
-  color: black;
+  color: #2a2d34;
   font-size: larger;
-
+  margin-right: 150px;
 }
 </style>
 

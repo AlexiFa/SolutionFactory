@@ -1,7 +1,7 @@
 <template>
 
   
-    <div>
+    <div id="div1">
         <DTable>
 
         </DTable>
@@ -9,8 +9,6 @@
 
         </DCard>
     </div>
-
-   
   
 </template>
 
@@ -30,7 +28,6 @@ export default
 </script>
 
 <style scoped>
-
 
 
   

@@ -19,7 +19,7 @@
   width:1100px;
   background-color: #588b8b;
   border-radius:1100px;
-  border: 1px solid black;
+  border: 0.5px solid #2a2d34;
 }
 .background-circle2{
   position: absolute;
@@ -30,7 +30,7 @@
   width:1100px;
   background-color: #e9c46a;
   border-radius: 1100px;
-  border: 1px solid black;
+  border: 0.5px solid #2a2d34;
 }
 </style>
 <script>

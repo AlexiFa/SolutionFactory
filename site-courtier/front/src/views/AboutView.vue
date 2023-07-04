@@ -4,44 +4,56 @@
       <div class="background-circle2"></div>
       <div class="container about">
         <div class="title">
-          <h1>Qu'est-ce qu'OptiGestion?</h1>
+          <h1>Qu'est-ce que OptiGestion?</h1>
         </div>
         <div class="section">
           <div class="text">
             <h2>Une aide pour vous, les particuliers</h2>
-            <p>[]</p>
+            <p>[details]</p>
           </div>
-          <div class="image"><img src="../assets/courtier-immo-check.png" alt=""></div>
+          <div class="image"><img src="../assets/courtier-immo-check.png"></div>
         </div>
         <div class="section">
-          <div class="image"><img src="" alt=""></div>
+          <div class="image"><img src="../assets/expert-pas-deborde.png"></div>
           <div class="text">
             <h2>Votre Courtier ne sera plus deborde !</h2>
-            <p>[]</p>
+            <p>[details]</p>
           </div>
         </div>
         <div class="last-section">
-          <div class="text">
+          <div class="tt">
             <h2>L'équipe de TechExpert Solutions au rapport</h2>
           </div>
           <div class="team">
             <div class="member">
-              <img src="" alt="">
+              <div class="circle">membre</div>
+              <h3>Prenom Nom</h3>
+              <p>Position</p>
             </div>
             <div class="member">
-              <img src="" alt="">
+              <div class="circle">membre</div>
+              <h3>Prenom Nom</h3>
+              <p>Position</p>
             </div>
             <div class="member">
-              <img src="" alt="">
+              <div class="circle">membre</div>
+              <h3>Prenom Nom</h3>
+              <p>Position</p>
             </div>
             <div class="member">
-              <img src="" alt="">
+              <div class="circle">membre</div>
+              <h3>Prenom Nom</h3>
+              <p>Position</p>
             </div>
             <div class="member">
-              <img src="" alt="">
+              <div class="circle">membre</div>
+              <h3>Prenom Nom</h3>
+              <p>Position</p>
             </div>
             <div class="member">
-              <img src="" alt="">
+              <div class="circle">membre</div>
+              <h3>Prenom Nom</h3>
+              <p>Position</p>
             </div>            
           </div>
         </div>        
@@ -49,6 +61,62 @@
     </div>
 </template>
 <style scoped >
+.about{
+  position: relative;
+  z-index:2;
+  display: flex;
+  flex-direction: column;
+  padding: 5% 0%;
+ 
+}
+.title{
+  display:flex;
+  justify-content:left;
+  margin-bottom: 5%;
+  /* border:solid; */
+} .title h1 {font-size: 300%;}
+.section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  padding: 5% 0%;
+  background-color: rgba(255,255,255, 0.8);
+  border: 0.1px solid #2a2d34;
+}
+.text{
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  width: 50%;
+}
+.image{
+  width:50%;
+}.image img { height: 400px;}
+.last-section {
+  display:flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+  padding: 5% 0%;
+  background-color: rgba(255,255,255, 0.8);
+  border: 0.1px solid #2a2d34;
+} .last-section .tt { margin-bottom: 4%;}
+.team{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 50px;
+  row-gap: 50px;
+  
+}.member{
+  justify-self: center;
+}
+.circle {
+  height: 200px;
+  width:200px;
+  border-radius: 100%;
+  background: #588b8b;
+}
 .background-circle1 {
   position: absolute;
   z-index: 1;
@@ -56,9 +124,9 @@
   right:-350px;
   height: 800px;
   width:1100px;
-  background-color: #588b8b;
+  background-color: rgb(88, 139, 139);
   border-radius:1100px;
-  border: 1px solid black;
+  border: 0.5px solid #2a2d34;
 }
 .background-circle2{
   position: absolute;
@@ -69,26 +137,6 @@
   width:1100px;
   background-color: #e9c46a;
   border-radius: 1100px;
-  border: 1px solid black;
-}
-.about{
-  position: relative;
-  z-index:2;
-  border:solid;
-  display: flex;
-  flex-direction: column;
-  padding: 5%;
-}
-.title{
-  font-size: 200%;
-  margin-bottom: 5%;
-}
-.section{
-  display: flex;
-  flex-direction: row;
-}
-.lastsection{
-  display:flex;
-  flex-direction: column;
+  border: 0.5px solid #2a2d34;
 }
 </style>
