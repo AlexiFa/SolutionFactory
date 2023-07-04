@@ -1,5 +1,5 @@
 import express from 'express';
-import { getUserInfo, getUserInfoById } from '../controllers/user.controller.js';
+import { getUserInfo } from '../controllers/user.controller.js';
 
 
 
