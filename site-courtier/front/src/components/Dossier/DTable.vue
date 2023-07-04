@@ -6,14 +6,8 @@
       <h5>Dossier de:</h5>
     </div>
 
-    
-    <div class="input" >
-      <div class="mb-3">
-        <label for="formFile" class="form-label"></label>
-        <input class="form-control" type="file" id="formFile" ref="fileInput" style="display: none;" @change="submitFile">
-        <button id="envoyer" class="btn btn-dark btn-sm" @click="openFileInput">Ajouter un document</button>
-      </div>
-    </div>
+
+    <br>
 
     <div>
       <table class="table table-bordered table-secondary" id="input">
@@ -22,7 +16,6 @@
             <th scope="col">Nom Document</th>
             <th scope="col">Date</th>
             <th scope="col">Consulté</th>
-            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
@@ -30,13 +23,9 @@
             <td @click="displayDocument(file.name)">{{ file.name }}</td>
             <td>{{ file.date }}</td>
             <td>Non</td>
-            <td>
-              <button class="btn btn-dark btn-sm" @click="deleteFile(file)">Retirer</button>
-            </td>
           </tr>
         </tbody>
       </table>
-      <button id="send" class="btn btn-dark btn-sm" >Envoyer</button>
     </div>
 
 
@@ -94,6 +83,37 @@
           </div>
         </div>
       </div>
+    </div>
+
+
+    <div class="input" >
+      <div class="mb-3">
+        <label for="formFile" class="form-label"></label>
+        <input class="form-control" type="file" id="formFile" ref="fileInput" style="display: none;" @change="submitFile">
+        <button id="envoyer" class="btn btn-dark btn-sm" @click="openFileInput">Ajouter un document</button>
+      </div>
+    </div>
+
+    <div>
+      <table class="table table-bordered table-secondary" id="input">
+        <thead>
+          <tr>
+            <th scope="col">Nom Document</th>
+            <th scope="col">Date</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="file in files" :key="file.name">
+            <td @click="displayDocument(file.name)">{{ file.name }}</td>
+            <td>{{ file.date }}</td>
+            <td>
+              <button class="btn btn-dark btn-sm" @click="deleteFile(file)">Retirer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button id="send" class="btn btn-dark btn-sm" >Envoyer</button>
     </div>
 
    
@@ -187,7 +207,8 @@ export default {
   padding: 20px;
   width: 60%;
   float: left;
-  margin-top : -3%;
+  margin-top : -6%;
+  margin-bottom: auto;
 }
 
 
@@ -216,8 +237,9 @@ export default {
   background-color: #E9C46A;
   color: black;
   border-radius: 10px;
-  float: right;
-  margin-top: 8px;
+  float: left;
+  margin-top: 70px;
+  margin-bottom: 10px;
 }
 
 #add {

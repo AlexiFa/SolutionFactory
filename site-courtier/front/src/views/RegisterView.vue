@@ -43,7 +43,9 @@ const Register = async () => {
         localStorage.setItem('user_id', res.user_id)
         router.push('/')
   
-        window.location.reload();
+        setTimeout(() => {
+            window.location.reload();        
+        }, 300);
     } else{
         alert(res.message)
     }
