@@ -52,7 +52,7 @@ function togglePassword(id) {
 
 <template>
 
-    <div class="container" style="padding: 1%;background-color: #2A2D34">
+    <div class="container" >
         <div class="row">
         <div class="container col d-flex flex-column justify-content-center" style="margin: 1%;">
             <img src="../assets/logo.png" alt="logo">
@@ -102,6 +102,8 @@ img{
 
 .container{
     margin-top: 4%;
+    padding: 1%;
+    background-color: #2A2D34;
 }
 
 #dispo{
