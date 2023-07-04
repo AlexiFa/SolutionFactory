@@ -7,7 +7,7 @@
       <div v-for="item in items" :key="item.id">
       <div name="Dossier-Client" class="dossier-client">
         <div style="width:30%;">
-            <DCardClient :client="item"/>
+            <DCardClient :dossier="item"/>
         </div> 
         <div style="width:30%;">
             <DCardSuivi></DCardSuivi>
@@ -67,11 +67,7 @@
     },
     methods: {
       fetchDossiers() {
-        // put the code to get the dossier from the local database
-        // create a route for dossier : '/getDossier'
-        // create a controller for dossier and a function to get the dossier when we call /getDossier
-        console.log('fetching dossiers')
-        axios.get('http://localhost:3000/api/dossier/getdossier').then(response => {
+        axios.get('http://localhost:3000/api/dossier/getdossiercourtier').then(response => {
           this.items = response.data
           console.log(response.data)
         }).catch(error => {

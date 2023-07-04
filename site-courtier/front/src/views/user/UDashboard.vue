@@ -4,9 +4,10 @@
           <h1>Dossiers en cours de traitement</h1>
         </div>
         <!-- modele card dossier du point de vue client -->
+        <div v-for="item in items" :key="item.id">
         <div name="Dossier-Client" class="dossier-client">
           <div style="width:30%;">
-              <DCardTitleDos></DCardTitleDos>
+              <DCardTitleDos :dossier="item"></DCardTitleDos>
           </div> 
           <div style="width:30%;">
               <DCardSuivi></DCardSuivi>
@@ -16,6 +17,7 @@
               <DCardContent></DCardContent>
           </div>
         </div>
+      </div>
     </div>
 </template>
 <style scoped>
@@ -49,10 +51,30 @@
   import DCardSuivi from '@/components/Dashboard/DCardSuivi.vue'
   import DCardTitleDos from '@/components/Dashboard/DCardTitleDos.vue'
   import DCardContent from '@/components/Dashboard/DCardContent.vue'
+  import axios from 'axios'
   export default {
     name: 'CDashboard',
     components: {
       DCardSuivi, DCardContent, DCardTitleDos
+    },
+    data() {
+      return {
+        items: []
+      }
+    },
+    mounted() {
+      this.fetchDossiers()
+    },
+    methods: {
+      fetchDossiers() {
+        const user_id = localStorage.getItem('user_id')
+        axios.get(`http://localhost:3000/api/dossier/getdossierclient?user_id=${user_id}`).then(response => {
+          this.items = response.data
+          console.log(response.data)
+        }).catch(error => {
+          console.log(error)
+        });
+      }
     }
   }
   </script>

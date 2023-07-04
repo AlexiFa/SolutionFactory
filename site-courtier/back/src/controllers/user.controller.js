@@ -60,3 +60,23 @@ export const searchUser = async (req, res) => {
         })
     }
 }
+
+/*export const getUserInfoById = async (req, res) => {
+    const { user_id } = req.params.id;
+
+    try {
+        const user = await client.users.get(user_id)
+        res.json({
+            success: true,
+            message: 'User information retrieved successfully',
+            user: user
+        })
+    } catch (err) {
+        console.log(err)
+        res.json({
+            success: false,
+            message: "error in get user method",
+            err: err
+        })
+    }
+}*/
