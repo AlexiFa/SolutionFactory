@@ -19,7 +19,7 @@
       <!-- Grid row -->
       <div class="row mt-3">
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-8 mx-auto mb-4">
+        <div class="col-md-3 col-lg-4 col-xl-6 mx-auto mb-4">
           <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
             <i ></i>OPTI-GESTION
@@ -73,16 +73,16 @@
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <div id="contact" class="col-md-3 col-lg-4 col-xl-2 mx-auto mb-md-0 mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-          <p><i ></i> 8 rue des coquelicots<br> 95008 Paris, France</p>
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i ></i>Contact</h6>
+          <p id="adresse"><i ></i> 8 rue des coquelicots<br> 95008 Paris, France</p>
           <p>
             <i ></i>
             optigestion@gmail.com
           </p>
           <p><i ></i> + 33 07 56 45 97 88</p>
-          <p><i ></i> + 33 05 23 25 67 89</p>
         </div>
         <!-- Grid column -->
       </div>
@@ -120,5 +120,12 @@ export default {
   text-align: justify;
 }
 
+#contact {
+  margin-top: 0%;
+}
+
+#adresse{
+  margin-top: -5%;
+}
 
 </style>
