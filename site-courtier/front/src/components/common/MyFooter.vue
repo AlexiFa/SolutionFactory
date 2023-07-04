@@ -15,25 +15,24 @@
 
   <!-- Section: Links  -->
   
-    <div class="container text-center text-md-start mt-5">
+    <div id="card" class="container text-center text-md-start mt-5">
       <!-- Grid row -->
       <div class="row mt-3">
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+        <div class="col-md-3 col-lg-4 col-xl-6 mx-auto mb-4">
           <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Company name
+            <i ></i>OPTI-GESTION
           </h6>
-          <p>
-            Here you can use rows and columns to organize your footer content. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit.
+          <p id="text">
+            Optigestion est votre partenaire incontournable pour une gestion efficace de vos dossiers de courtage. Notre plateforme conviviale et intuitive est conçue spécialement pour répondre à vos besoins professionnels. Grâce à Optigestion, vous pouvez optimiser votre travail quotidien et mieux gérer vos clients, vos contrats et vos documents.
           </p>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
+        <!--<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+           Links 
           <h6 class="text-uppercase fw-bold mb-4">
             Products
           </h6>
@@ -49,12 +48,12 @@
           <p>
             <a href="#!" class="text-reset">Laravel</a>
           </p>
-        </div>
+        </div>-->
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
+        <!-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+           Links 
           <h6 class="text-uppercase fw-bold mb-4">
             Useful links
           </h6>
@@ -70,20 +69,20 @@
           <p>
             <a href="#!" class="text-reset">Help</a>
           </p>
-        </div>
+        </div>-->
         <!-- Grid column -->
 
         <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+        <div id="contact" class="col-md-3 col-lg-4 col-xl-2 mx-auto mb-md-0 mb-4">
           <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i ></i>Contact</h6>
+          <p id="adresse"><i ></i> 8 rue des coquelicots<br> 95008 Paris, France</p>
           <p>
-            <i class="fas fa-envelope me-3"></i>
-            info@example.com
+            <i ></i>
+            optigestion@gmail.com
           </p>
-          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          <p><i ></i> + 33 07 56 45 97 88</p>
         </div>
         <!-- Grid column -->
       </div>
@@ -94,7 +93,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2023 Copyright:
+    © 2023 OPTI-GESTION
   </div>
   <!-- Copyright -->
 </footer>
@@ -113,9 +112,25 @@ export default {
 <style scoped>
 
 #section {
-  background-color: #588B8B;  
+  background-color: #588B8B; 
+  margin-top: 0%; 
 }
 
+#text {
+  text-align: justify;
+}
 
+#contact {
+  margin-top: 0%;
+}
+
+#adresse{
+  margin-top: -5%;
+}
+
+#card{
+  border-radius: 0%;
+  border: 3px solid #E9C46A;
+}
 
 </style>
