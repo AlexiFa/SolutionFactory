@@ -8,32 +8,7 @@
         <DCard>
 
         </DCard>
-
-        <div>
-          <table class="table table-bordered table-secondary" id="secondTable">
-            <thead>
-              <tr>
-                <th scope="col">Colonne1</th>
-                <th scope="col">Colonne2</th>
-                <th scope="col">Colonne3</th>
-                <th scope="col">Colonne4</th>
-                <th scope="col"></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
     </div>
-
-   
   
 </template>
 
@@ -54,14 +29,6 @@ export default
 
 <style scoped>
 
-#div1{
-  margin-bottom: 9%;
-}
 
-.table{
-  width:50%;
-  margin-left: auto;
-  margin-right: auto;
-}
   
 </style>

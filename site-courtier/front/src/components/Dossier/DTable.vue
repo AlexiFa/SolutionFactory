@@ -8,12 +8,12 @@
 
     
     <div class="input" >
-      <div class="mb-3">
+      <!--<div class="mb-3">
         <label for="formFile" class="form-label"></label>
         <input class="form-control" type="file" id="formFile" ref="fileInput" style="display: none;" @change="submitFile">
         <button id="envoyer" class="btn btn-dark btn-sm" @click="openFileInput">Ajouter un document</button>
-      </div>
-    </div>
+      </div>-->
+    </div>-
 
     <div>
       <table class="table table-bordered table-secondary" id="input">
@@ -22,7 +22,7 @@
             <th scope="col">Nom Document</th>
             <th scope="col">Date</th>
             <th scope="col">Consulté</th>
-            <th scope="col"></th>
+            <!---<th scope="col"></th>-->
           </tr>
         </thead>
         <tbody>
@@ -30,13 +30,13 @@
             <td @click="displayDocument(file.name)">{{ file.name }}</td>
             <td>{{ file.date }}</td>
             <td>Non</td>
-            <td>
+            <!---<td>
               <button class="btn btn-dark btn-sm" @click="deleteFile(file)">Retirer</button>
-            </td>
+            </td>-->
           </tr>
         </tbody>
       </table>
-      <button id="send" class="btn btn-dark btn-sm" >Envoyer</button>
+      <!---<button id="send" class="btn btn-dark btn-sm" >Envoyer</button>-->
     </div>
 
 
