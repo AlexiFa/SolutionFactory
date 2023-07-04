@@ -38,6 +38,9 @@
       </table>
     </div>
 
+
+
+
     <div>
       <button id="add" class="btn btn-dark btn-sm" @click="openForm">Ajouter une proposition</button>
     </div>
@@ -93,6 +96,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   data() {
     return {
@@ -101,6 +105,14 @@ export default {
       showForm: false,
       bankName: ''
     };
+  },
+  async created() {
+    try {
+            const response = await axios.get('http://localhost:3000/api/documents/userDocuments');
+            this.files = response.data;
+        } catch (error) {
+            console.log(error);
+        }
   },
   methods: {
     openFileInput() {
@@ -290,3 +302,34 @@ h5 {
 }
 
 </style>
+
+
+
+
+
+<!-- 
+
+<div>
+  <table class="table table-bordered table-secondary" id="input">
+    <thead>
+      <tr>
+        <th scope="col">Nom Document</th>
+        <th scope="col">Date</th>
+        <th scope="col">Consulté</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="file in files" :key="file.name">
+        <td>
+          <a :href="`http://localhost:3000/api/documents/serveDocument/${file.id_Documents}`" target="_blank">{{ file.file_name }}</a>
+        </td>
+        <td></td>
+        <td></td>
+        <td>
+          <button class="btn btn-dark btn-sm" @click="deleteFile(file)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
