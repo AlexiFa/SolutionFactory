@@ -20,7 +20,9 @@
         </thead>
         <tbody>
           <tr v-for="file in files" :key="file.name">
-            <td @click="displayDocument(file.name)">{{ file.name }}</td>
+            <td>
+              <a :href="`http://localhost:3000/api/documents/serveDocument/${file.id_Documents}`" target="_blank">{{ file.file_name }}</a>
+            </td>
             <td>{{ file.date }}</td>
             <td>Non</td>
           </tr>
@@ -134,8 +136,9 @@ export default {
     };
   },
   async created() {
+    const dossierId = this.$route.params.dossierId;
     try {
-            const response = await axios.get('http://localhost:3000/api/documents/userDocuments');
+      const response = await axios.get(`http://localhost:3000/api/documents/userDocuments?dossierId=${dossierId}`);
             this.document = response.data;
         } catch (error) {
             console.log(error);

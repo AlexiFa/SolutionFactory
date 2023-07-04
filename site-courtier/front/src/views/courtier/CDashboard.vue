@@ -13,7 +13,7 @@
             <DCardSuivi></DCardSuivi>
         </div>
         <!-- cette carte ci-dessous est le futur-bouton vers le dossier detaillé-->
-        <div class="btn dossier-details" role="button" onclick="window.location.href='/CDossier'">
+        <div class="btn dossier-details" role="button" @click="$router.push({ name: 'CDossier', params: { dossierId: item.Id_Dossier } })">
             <DCardContent></DCardContent>
         </div>
       </div>
