@@ -7,7 +7,7 @@
     </div>
 
     
-    <div class="input" style="">
+    <div class="input" >
       <div class="mb-3">
         <label for="formFile" class="form-label"></label>
         <input class="form-control" type="file" id="formFile" ref="fileInput" style="display: none;" @change="submitFile">
