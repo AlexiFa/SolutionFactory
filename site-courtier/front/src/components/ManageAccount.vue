@@ -16,32 +16,7 @@ const handleLogout = async () => {
 </script>
 
 <template>
-    <!-- <div class="container text-center">
-        <div class="row">
-            <div class="col-1">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Active</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-6">
 
-            </div>
-            <div class="col">
-            
-            </div>
-        </div>
-    </div> -->
 
 <div class="container-fluid">
 	<div class="row gutters">
@@ -57,10 +32,6 @@ const handleLogout = async () => {
 							<h6 class="user-email">{{ userInfo.emails.email }}</h6>
 						</div>
 						<button id="logout" @click="handleLogout" class="btn btn-outline-danger">Se deconnecter</button>
-						<!---<div class="about">
-							<h5>About</h5>
-							<p>I'm {{userInfo.name.first_name}}. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
-						</div>-->
 					</div>
 				</div>
 			</div>

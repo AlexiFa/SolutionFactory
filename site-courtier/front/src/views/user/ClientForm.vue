@@ -128,25 +128,25 @@ export default {
     methods: {
         handleFileUpload(event) {
             const { id, files } = event.target;
-            this.files[id] = files[0];  // Aquí asumimos que solo un archivo se carga a la vez
+            this.files[id] = files[0];  
         },
         async submitForm() {
 
             const formData = new FormData();
 
-            // Agrega los datos del formulario
+            
             for (const [key, value] of Object.entries(this.form)) {
                 formData.append(key, value);
             }
 
-            // Agrega los archivos
+            
             for (const [key, file] of Object.entries(this.files)) {
                 if (file) {
                     formData.append(key, file);
                 }
             }
 
-            // Envía los datos al back-end
+           
             try {
                 const response = await fetch('http://localhost:3000/api/forms/submitForm', {
                     method: 'POST',
@@ -166,10 +166,7 @@ export default {
 };
 </script>
 
-<!-- headers: {
-    'Content-Type': 'application/json',
-    'X-User-Id': localStorage.getItem('user_id')
-}, -->
+
 
 <style scoped>
 

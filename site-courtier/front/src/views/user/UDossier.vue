@@ -1,5 +1,5 @@
 <template>
-    <!---<div class="btn" role="button" onclick="window.location.href='/UDashboard'"> -->
+
     <div class="div2"> 
       <div class="col1">
       <div id="doc">
@@ -78,9 +78,7 @@
   </template>
   
   <script>
-  // @ is an alias to /src
-  //import DCard from '@/components/Dossier/DCard.vue'
-  //import DTable from '@/components/Dossier/DTable.vue'
+
   import axios from 'axios';
   import UDashboard from './UDashboard.vue';
   export default 

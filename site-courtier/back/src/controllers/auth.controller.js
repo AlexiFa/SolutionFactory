@@ -27,14 +27,14 @@ export const register = async (req, res) => {
 
         })
 
-        // Crear un nuevo cliente en la base de datos local
+        // Créer un utilisateur de maniere local
         const newUser = await User.create({
             id_User: resp.user_id,
             nom: first_name + ' ' + last_name,
             mail: email,
-            login: email,  // Suponiendo que el login es el mismo que el email
-            password, // Deberías almacenar esto como un hash, no en texto plano
-            userType: role, // Suponiendo que `role` es un número
+            login: email, 
+            password, //On garde de maniere local le mot de passe pour des motif de teste, mais pas pour un produit final
+            userType: role, 
         });
 
         res.json({
@@ -66,7 +66,7 @@ export const login = async (req, res) => {
             session_duration_minutes: 60
         })
 
-        // Buscar al usuario en la base de datos local
+        // Chercher l'utilisateur dans la base local
         const user = await User.findOne({
             where: {
                 login: email,

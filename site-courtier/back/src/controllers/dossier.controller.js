@@ -1,8 +1,6 @@
 import Dossier from '../models/Dossier.js';
 import sequelize from '../config/db.config.js';
-//import dotenv from 'dotenv';
 
-//dotenv.config()
 
 export const getDossierClient = async (req, res) => {
 
@@ -10,7 +8,7 @@ export const getDossierClient = async (req, res) => {
 
     Dossier.findAll({where:{id_User:user_id}}).then(data =>{
         res.json(data)
-        
+
     }).catch(err =>{
         console.log(err);
         res.status(500).json({error:"erreur requete SQL"})

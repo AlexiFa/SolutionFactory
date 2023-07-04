@@ -347,34 +347,3 @@ h5 {
 
 
 </style>
-
-
-
-
-
-<!-- 
-
-<div>
-  <table class="table table-bordered table-secondary" id="input">
-    <thead>
-      <tr>
-        <th scope="col">Nom Document</th>
-        <th scope="col">Date</th>
-        <th scope="col">Consulté</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="file in files" :key="file.name">
-        <td>
-          <a :href="`http://localhost:3000/api/documents/serveDocument/${file.id_Documents}`" target="_blank">{{ file.file_name }}</a>
-        </td>
-        <td></td>
-        <td></td>
-        <td>
-          <button class="btn btn-dark btn-sm" @click="deleteFile(file)">Supprimer</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div> -->

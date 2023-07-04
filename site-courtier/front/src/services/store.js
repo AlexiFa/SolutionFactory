@@ -3,12 +3,6 @@ import { ref } from 'vue';
 export const isLoggedIn = ref(!!localStorage.getItem('token'));
 
 
-// export const setLoggedIn = (value, user_id) => {
-//     isLoggedIn.value = value;
-//     localStorage.setItem('token', value ? 'true' : '');
-//     localStorage.setItem('user_id', user_id || '');
-    
-// };
 
 export const setLoggedIn = (value, user_id) => {
   isLoggedIn.value = value;
@@ -82,7 +76,7 @@ export const validateToken = async () => {
   }
 };
 
-// Llamar a esta función cuando inicie la aplicación
+
 validateToken();
 
 
