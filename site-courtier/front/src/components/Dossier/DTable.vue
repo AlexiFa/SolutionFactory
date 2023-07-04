@@ -40,13 +40,6 @@
     </div>
 
 
-
-
-
-   
-    
-
-
     <div>
       <button id="add" class="btn btn-dark btn-sm" @click="openForm">Ajouter une proposition</button>
     </div>
@@ -123,7 +116,7 @@ export default {
   async created() {
     try {
             const response = await axios.get('http://localhost:3000/api/documents/userDocuments');
-            this.files = response.data;
+            this.document = response.data;
         } catch (error) {
             console.log(error);
         }
