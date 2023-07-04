@@ -47,7 +47,7 @@ const handleLogout = async () => {
           <router-link to="/ManageAccount" class="nav-link">Mon compte</router-link>
         </li>
       </ul>
-      <div class="me-4 mb-2 mb-lg-0" v-if="isLoggedIn">
+      <div class="me-1 mb-2 mb-lg-0" v-if="isLoggedIn">
         <span v-if="userInfo" id="welcome">Bienvenue {{ userInfo.name.first_name }}</span>
         <button id="logout" @click="handleLogout" class="btn btn-danger">Se deconnecter</button> 
       </div>
@@ -83,10 +83,10 @@ button{
 }
 
 #welcome{
-  margin-left: auto;
   font-weight: bolder;
   color: #2a2d34;
   font-size: larger;
+  margin-right: 150px;
 }
 </style>
 
