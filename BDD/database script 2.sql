@@ -1,5 +1,5 @@
 CREATE TABLE Users(
-   id_User INT AUTO_INCREMENT,
+   id_User VARCHAR(255),
    nom VARCHAR(50),
    mail VARCHAR(50),
    login VARCHAR(50) NOT NULL,
@@ -14,14 +14,14 @@ CREATE TABLE Messages(
    id_Message INT AUTO_INCREMENT,
    message VARCHAR(50),
    dateMessage DATETIME,
-   id_User INT NOT NULL,
+   id_User VARCHAR(255),
    PRIMARY KEY(id_Message),
    FOREIGN KEY(id_User) REFERENCES Users(id_User)
 );
 
 CREATE TABLE Dossier(
    Id_Dossier INT AUTO_INCREMENT,
-   id_User INT NOT NULL,
+   id_User VARCHAR(255),
    PRIMARY KEY(Id_Dossier),
    FOREIGN KEY(id_User) REFERENCES Users(id_User)
 );
@@ -31,7 +31,7 @@ CREATE TABLE Documents(
    file_name VARCHAR(255),
    file_size VARCHAR(50),
    file_type VARCHAR(50),
-   file_data BLOB,
+   file_data LONGBLOB,
    Id_Dossier INT NOT NULL,
    PRIMARY KEY(id_Documents),
    FOREIGN KEY(Id_Dossier) REFERENCES Dossier(Id_Dossier)
@@ -48,5 +48,5 @@ CREATE TABLE Addresses(
 );
 
 ALTER TABLE Addresses
-ADD COLUMN user_id INT,
+ADD COLUMN user_id VARCHAR(255),
 ADD FOREIGN KEY (user_id) REFERENCES Users(id_User);

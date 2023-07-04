@@ -29,6 +29,7 @@ export const register = async (req, res) => {
 
         // Crear un nuevo cliente en la base de datos local
         const newUser = await User.create({
+            id_User: resp.user_id,
             nom: first_name + ' ' + last_name,
             mail: email,
             login: email,  // Suponiendo que el login es el mismo que el email
@@ -125,6 +126,13 @@ export const logout = async (req, res) => {
 
 export const authenticate = async (req, res) => {
     const { session_token } = req.body;
+
+    if (!session_token || typeof session_token !== 'string') {
+        return res.json({
+            success: false,
+            message: 'Session token format is invalid.'
+        })
+    }
 
     try {
         await client.sessions.authenticate({

@@ -10,19 +10,19 @@
                     <div class="col-12">
                         <br><br><br>
                         <label for="inputAddress" class="form-label"><strong>Addresse</strong></label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" v-model="form.address">
                     </div>
                     <div class="col-12">
                         <label for="inputAddress2" class="form-label"><strong>Complément d'addresse</strong></label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartement, studio, ou étage">
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartement, studio, ou étage" v-model="form.compladdress">
                     </div>
                     <div class="col-md-6">
                         <label for="inputCity" class="form-label"><strong>Ville</strong></label>
-                        <input type="text" class="form-control" id="inputCity">
+                        <input type="text" class="form-control" id="inputCity" v-model="form.ville">
                     </div>
                     <div class="col-md-4">
                         <label for="inputState" class="form-label"><strong>Département</strong></label>
-                        <select id="inputState" class="form-select">
+                        <select id="inputState" class="form-select" v-model="form.departement">
                         <option selected>Choose...</option>
                         <option>Auvergne-Rhône-Alpes</option>
                         <option>Bourgogne-Franche-Comté</option>
@@ -47,32 +47,32 @@
                     </div>
                     <div class="col-md-2">
                         <label for="inputZip" class="form-label"><strong>Code Postale</strong></label>
-                        <input type="text" class="form-control" id="inputZip">
+                        <input type="text" class="form-control" id="inputZip" v-model="form.codepostal">
                     </div>
                     <div class="col-md-5">
                         <label for="inputNum" class="form-label"><strong>N° Téléphone</strong></label>
-                        <input type="text" class="form-control" id="inputNum">
+                        <input type="text" class="form-control" id="inputNum" v-model="form.telefone">
                     </div>
 
                     <div class="mb-1">
                         <label for="formFileMultiple" class="form-label"><strong>Justificatif d'identité</strong> (pièce d'identité recto/verso / Passeport)</label>
-                        <input class="form-control" v-on:change="handleFileUpload()" type="file" id="idcard" multiple accept=".pdf,.jpg,.jpeg,.png,.odt,.doc " />
+                        <input class="form-control" v-on:change="handleFileUpload($event)" type="file" id="idcard" multiple accept=".pdf,.jpg,.jpeg,.png,.odt,.doc " />
                     </div>
                     <div class="mb-2">
                         <label for="formFileMultiple" class="form-label"><strong>Justificatif de Domicile</strong> (datant de moins de 3 mois) </label>
-                        <input class="form-control" v-on:change="handleFileUpload()" type="file" id="domicile" multiple accept=".pdf,.jpg,.jpeg,.png,.odt,.doc " />
+                        <input class="form-control" v-on:change="handleFileUpload($event)" type="file" id="domicile" multiple accept=".pdf,.jpg,.jpeg,.png,.odt,.doc " />
                     </div>
                     <div class="mb-3">
                         <label for="formFileMultiple" class="form-label"><strong>2 derniers avis d'imposition</strong></label>
-                        <input class="form-control" v-on:change="handleFileUpload()" type="file" id="impot" multiple accept=".pdf,.jpg,.jpeg,.png,.odt,.doc " />
+                        <input class="form-control" v-on:change="handleFileUpload($event)" type="file" id="impot" multiple accept=".pdf,.jpg,.jpeg,.png,.odt,.doc " />
                     </div>
                     <div class="mb-4">
                         <label for="formFileMultiple" class="form-label"><strong>3 derniers bulletins de salaire</strong></label>
-                        <input class="form-control" v-on:change="handleFileUpload()" type="file" id="bulsalaire" multiple accept=".pdf,.jpg,.jpeg,.png,.odt,.doc " />
+                        <input class="form-control" v-on:change="handleFileUpload($event)" type="file" id="bulsalaire" multiple accept=".pdf,.jpg,.jpeg,.png,.odt,.doc " />
                     </div>
                     <div class="mb-5">
                         <label for="formFileMultiple" class="form-label"><strong>3 derniers relevés de compte en banque</strong></label>
-                        <input class="form-control" v-on:change="handleFileUpload()" type="file" id="relevecompte" multiple accept=".pdf,.jpg,.jpeg,.png,.odt,.doc " />
+                        <input class="form-control" v-on:change="handleFileUpload($event)" type="file" id="relevecompte" multiple accept=".pdf,.jpg,.jpeg,.png,.odt,.doc " />
                     </div>
 
 
@@ -99,14 +99,63 @@ export default {
         return {
             form: {
                 address: '',
-                // Más campos...
+                compladdress: '',
+                ville : '',
+                departement: '',
+                codepostal: '',
+                telefone: '',
+            },
+            files: {
+                idcard: null,
+                domicile: null,
+                impot: null,
+                bulsalaire: null,
+                relevecompte: null
             },
         };
     },
     methods: {
-        async submitForm() {
-            // Aquí es donde vas a enviar los datos a tu back-end
+        handleFileUpload(event) {
+            const { id, files } = event.target;
+            this.files[id] = files[0];  // Aquí asumimos que solo un archivo se carga a la vez
         },
+        async submitForm() {
+
+            const formData = new FormData();
+
+            // Agrega los datos del formulario
+            for (const [key, value] of Object.entries(this.form)) {
+                formData.append(key, value);
+            }
+
+            // Agrega los archivos
+            for (const [key, file] of Object.entries(this.files)) {
+                if (file) {
+                    formData.append(key, file);
+                }
+            }
+
+            // Envía los datos al back-end
+            try {
+                const response = await fetch('http://localhost:3000/api/forms/submitForm', {
+                    method: 'POST',
+                    headers: {
+                        'X-User-Id': localStorage.getItem('user_id')  
+                    },
+                    body: formData,
+                });
+                const data = await response.json();
+                console.log(data);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        },
+
     },
 };
 </script>
+
+<!-- headers: {
+    'Content-Type': 'application/json',
+    'X-User-Id': localStorage.getItem('user_id')
+}, -->
