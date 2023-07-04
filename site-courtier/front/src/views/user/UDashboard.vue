@@ -30,7 +30,7 @@ import DCardTitleDos from '@/components/Dashboard/DCardTitleDos.vue'
 import DCardContent from '@/components/Dashboard/DCardContent.vue'
 import axios from 'axios'
 export default {
-  name: 'CDashboard',
+  name: 'UDashboard',
   components: {
     DCardSuivi, DCardContent, DCardTitleDos
   },

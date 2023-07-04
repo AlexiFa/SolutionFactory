@@ -39,7 +39,7 @@ const routes = [
   },
 
   {
-    path: '/CDossier',
+    path: '/CDossier/:dossierId',
     name: 'CDossier',
     component: CDossier
   },
