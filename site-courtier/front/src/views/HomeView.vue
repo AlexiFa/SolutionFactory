@@ -1,9 +1,38 @@
 <template>
-  <div class="home">
-    <HelloWorld msg="Courtier, expert en crédit"/>
-  </div>
+    <div style = "position: relative; z-index: -1; height: 100%;">
+      <div class="background-circle1"></div>
+      <div class="background-circle2"></div>
+      <div class="home" style=" position: relative;z-index:2 ;">
+        <HelloWorld msg="Courtier, expert en crédit" />
+      </div>
+    </div>
+
 </template>
 
+<style scoped >
+.background-circle1 {
+  position: absolute;
+  z-index: 1;
+  top: -300px;
+  right:-300px;
+  height: 800px;
+  width:1000px;
+  background-color: #588b8b;
+  border-radius:1100px;
+  border: 1px solid black;
+}
+.background-circle2{
+  position: absolute;
+  z-index: 1;
+  bottom: -300px;
+  left: -300px;
+  height: 800px;
+  width:1000px;
+  background-color: #e9c46a;
+  border-radius: 1100px;
+  border: 1px solid black;
+}
+</style>
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
