@@ -84,7 +84,7 @@ button{
 }
 
 #welcome{
-  margin-left: 160px;
+  margin-left: auto;
   font-weight: bolder;
   color: black;
   font-size: larger;
