@@ -1,7 +1,7 @@
 <template>
     <!---<div class="btn" role="button" onclick="window.location.href='/UDashboard'"> -->
     <div class="div2"> 
-
+      <div class="col1">
       <div id="doc">
         <h4>Mes documents</h4>
       </div>
@@ -56,6 +56,7 @@
           </tbody>
         </table>
       </div>
+    </div>
 
       <div class="div1">
         <div class="mb-3" style="padding-top: 5%; width: 30%; display: block; margin-left: auto; margin-right: auto;">
@@ -112,11 +113,12 @@
   <style scoped>
   
   .div2 {
-    width:50%;
-    margin-right: 2%;
-    margin-left: 2%;
+    width:90%;
+    margin-right: 5%;
+    margin-left: 5%;
     margin-top: 60px;
     margin-bottom: 100px;
+    display: flex;
   }
 
   .div1
@@ -126,9 +128,14 @@
   background-color:#588B8B;  
   margin-top: 7%;
   margin-bottom: 7%;
-  width: 90%;
+  width: 50%;
+  margin-left: 5%;
 }
- 
+.col1{
+  width: 100%;
+  margin-right: 5%;
+} 
+
   #input{
     margin-bottom: 10%;
   }
