@@ -31,7 +31,7 @@ const handleLogout = async () => {
           <router-link to="/about" class="nav-link">À propos</router-link>
         </li>
         <li class="nav-item" v-if="isLoggedIn && userInfo">
-          <router-link to="/CDashboard" class="nav-link" v-if="userInfo.trusted_metadata.role == 'COURTIER'">Courtier Dashboard</router-link>
+          <router-link to="/CDashboard" class="nav-link" v-if="userInfo.trusted_metadata.role == 'COURTIER'">Dossiers </router-link>
         </li>
         <li class="nav-item dropdown" v-if="isLoggedIn && userInfo">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" v-if="userInfo.trusted_metadata.role == 'CLIENT'">
@@ -44,11 +44,12 @@ const handleLogout = async () => {
           </ul>
         </li>
         <li class="nav-item" v-if="isLoggedIn">
-          <router-link to="/ManageAccount" class="nav-link">Account</router-link>
+          <router-link to="/ManageAccount" class="nav-link">Mon compte</router-link>
         </li>
         <li class="nav-item" v-if="isLoggedIn">
-          <!-- Rajouter du css --><span v-if="userInfo">Welcome {{ userInfo.name.first_name }}</span>
-          <button @click="handleLogout" class="btn btn-danger">Logout</button>
+          <button id="logout" @click="handleLogout" class="btn btn-danger">Se deconnecter</button>
+          <!-- Rajouter du css --><span v-if="userInfo" id="welcome">Bienvenue {{ userInfo.name.first_name }}</span>
+          
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -73,6 +74,21 @@ button{
   background-color: #E9C46A;
   color: black;
   border-radius: 10px;
+}
+
+#logout{
+	background-color: #E9C46A;
+	color: black;
+	border-radius: 10px;
+	margin-right: 10px;
+}
+
+#welcome{
+  margin-left: 160px;
+  font-weight: bolder;
+  color: black;
+  font-size: larger;
+
 }
 </style>
 
