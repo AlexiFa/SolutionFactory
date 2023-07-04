@@ -13,7 +13,9 @@
             </thead>
             <tbody>
               <tr v-for="file in files" :key="file.name">
-                <td></td>
+                <td>
+                  <a :href="`http://localhost:3000/api/documents/serveDocument/${file.id_Documents}`" target="_blank">{{ file.file_name }}</a>
+                </td>
                 <td></td>
                 <td>
                   <button class="btn btn-dark btn-sm">Consulter</button>
@@ -58,13 +60,30 @@
   // @ is an alias to /src
   //import DCard from '@/components/Dossier/DCard.vue'
   //import DTable from '@/components/Dossier/DTable.vue'
-  
+  import axios from 'axios';
   export default 
+
   {
+    data() {
+    return {
+      files: [],
+      
+    }},
+
     name: 'CDossier',
     components: {
          
     },
+    
+    async created() {
+    const user_id = localStorage.getItem('user_id')
+    try {
+            const response = await axios.get(`http://localhost:3000/api/documents/userDocuments?user_id=${user_id}`);
+            this.files = response.data;
+        } catch (error) {
+            console.log(error);
+        }
+  },
   }
   </script>
 

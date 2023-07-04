@@ -1,5 +1,6 @@
 import Document from "../models/Document.js";
 import Dossier from '../models/Dossier.js';
+import User from "../models/User.js";
 
 // Función para obtener un documento específico por su ID.
 // export const getDocument = async (req, res) => {
@@ -35,10 +36,17 @@ import Dossier from '../models/Dossier.js';
 // import Dossier from '../models/Dossier.js';
 
 export const getUserDocuments = async (req, res) => {
+    const { user_id } = req.query;
     try {
-        const dossier = await Dossier.findOne({ where: { id_User: req.user.id } });
-        const documents = await Document.findAll({ where: { Id_Dossier: dossier.Id_Dossier } });
 
+        // const documents = await Document.findAll({ where: { Id_Dossier: dossier.Id_Dossier } });
+        // const dossier = await Dossier.findOne({ where: { id_User: user_id} });
+
+        const dossier = await Dossier.findOne({ where: { id_User: 2} });
+        const documents = await Document.findAll({ where: { Id_Dossier: 7 } });
+
+
+        
         // Devolver los documentos en formato JSON.
         res.json(documents);
     } catch (err) {
