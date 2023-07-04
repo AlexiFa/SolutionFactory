@@ -4,9 +4,10 @@
         <h1>Menu des Dossiers à traiter</h1>
       </div>
       <!-- modele card dossier du point de vue courtier -->
+      <div v-for="item in items" :key="item.id">
       <div name="Dossier-Client" class="dossier-client">
         <div style="width:30%;">
-            <DCardClient></DCardClient>
+            <DCardClient :client="item"/>
         </div> 
         <div style="width:30%;">
             <DCardSuivi></DCardSuivi>
@@ -17,10 +18,6 @@
         </div>
       </div>
     </div>
-    <div>
-      <ul>
-        <li v-for="item in items" :key="item.id">{{ item }}</li>
-      </ul>
     </div>
 </template>
 <style scoped>
