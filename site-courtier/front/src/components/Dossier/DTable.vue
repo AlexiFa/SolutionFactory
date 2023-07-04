@@ -69,6 +69,7 @@
           </tr>
         </tbody>
       </table>
+      <button id="send" class="btn btn-dark btn-sm" >Envoyer</button>
     </div>
 
     <div class="modal" :class="{ 'show': showForm }">
@@ -95,6 +96,22 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="center-table">
+      <table class="table table-bordered table-secondary empty-table">
+        <thead>
+          <tr>
+            <th scope="col">Column 1</th>
+            <th scope="col">Column 2</th>
+            <th scope="col">Column 3</th>
+            <th scope="col">Column 4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--  empty table -->
+        </tbody>
+      </table>
     </div>
 
   </div>
@@ -309,5 +326,6 @@ h5 {
   border-bottom-right-radius: 0.3rem;
   border-bottom-left-radius: 0.3rem;
 }
+
 
 </style>
