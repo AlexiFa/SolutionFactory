@@ -5,14 +5,14 @@
         <h1 id="titre">{{ msg }}</h1>
       </div>
       <div class="col">
-        <img id="imgLogo" src="../assets/logoFull.png" alt="Logo OpticGestion" style="width: 100%;height: fit-content;">
+        <img id="imgLogo" src="../assets/logoFull.png" alt="Logo OpticGestion" style="width: 100%;height: fit-content; border: 1px solid black; border-radius: 10px;;">
       </div>
     </div>
     <br><br><br>
     <!-- Premiere ligne -->
     <div  class="row">
       <div class="col">
-        <div  class="card mb-3" style="max-width: 540px; border: 7px solid #588B8B;">
+        <div class="card mb-3" style="max-width: 540px; outline:2px solid black; border: 7px solid #E2B33C;">
           <div class="row g-0">
             <div class="col-md-4">
               <img src="../assets/creditEtudiant.png" class="img-fluid rounded-start" alt="Img credit étudiant" style="margin-top: 5rem;">
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div class="col">
-        <div class="card mb-3" style="max-width: 540px; border: 7px solid #588B8B; ">
+        <div class="card mb-3" style="max-width: 540px; outline:2px solid black; border: 7px solid #487070;">
           <div class="row g-0" >
             <div class="col-md-4">
               <img src="../assets/pretImmo.jpeg" class="img-fluid rounded-start" alt="Img credit étudiant" style="margin-top: 5rem;">
@@ -45,7 +45,7 @@
         </div>
       </div>
       <div class="col">
-        <div class="card mb-3" style="max-width: 540px; border: 7px solid #588B8B;">
+        <div class="card mb-3" style="max-width: 540px; outline:2px solid black; border: 7px solid #E2B33C;">
           <div class="row g-0">
             <div class="col-md-4">
               <img src="../assets/pretVoiture.png" class="img-fluid rounded-start" alt="Img credit étudiant" style="margin-top: 5rem;">
@@ -65,7 +65,7 @@
     <!-- Deuxieme ligne -->
     <div class="row">
       <div class="col">
-        <div class="card mb-3" style="max-width: 540px; border: 7px solid #588B8B;">
+        <div class="card mb-3" style="max-width: 540px; outline:2px solid black; border: 7px solid #487070;">
           <div class="row g-0">
             <div class="col-md-4">
               <img src="../assets/pretConso.png" class="img-fluid rounded-start" alt="Img credit étudiant" style="margin-top: 5rem; transform: scaleX(-1);">
@@ -81,7 +81,7 @@
         </div>
       </div>
       <div class="col">
-        <div class="card mb-3" style="max-width: 540px; border: 7px solid #588B8B;">
+        <div class="card mb-3" style="max-width: 540px; outline:2px solid black; border: 7px solid #E2B33C;">
           <div class="row g-0">
             <div class="col-md-4">
               <img src="../assets/pretAssu.png" class="img-fluid rounded-start" alt="Img credit étudiant" style="margin-top: 5rem;">
@@ -97,7 +97,7 @@
         </div>
       </div>
       <div class="col">
-        <div class="card mb-3" style="max-width: 540px; border: 7px solid #588B8B;">
+        <div class="card mb-3" style="max-width: 540px; outline:2px solid black; border: 7px solid #487070;">
           <div class="row g-0">
             <div class="col-md-4">
               <img src="../assets/pretRenou.png" class="img-fluid rounded-start" alt="Img credit étudiant" style="margin-top: 5rem;">
@@ -144,9 +144,12 @@ a {
 }
 
 #container{
-  background-color: #E9C46A;
+  /* background-color: #E9C46A; */
 }
-
+h1{
+  float: left;
+  font-size: 300%;
+}
 
 #imgLogo{
   width: 200px;
