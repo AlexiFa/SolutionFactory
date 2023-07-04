@@ -15,7 +15,7 @@
 
   <!-- Section: Links  -->
   
-    <div class="container text-center text-md-start mt-5">
+    <div id="card" class="container text-center text-md-start mt-5">
       <!-- Grid row -->
       <div class="row mt-3">
         <!-- Grid column -->
@@ -126,6 +126,11 @@ export default {
 
 #adresse{
   margin-top: -5%;
+}
+
+#card{
+  border-radius: 0%;
+  border: 3px solid #E9C46A;
 }
 
 </style>
