@@ -55,155 +55,155 @@ export default
 <template>
   <div id="div0">
 
-  <div class="div2">
+    <div class="div2">
 
-    <div id="dossier">
-      <h5 >Dossier de: {{ nomClient }}</h5>
-    </div>
-
-
-    <br>
-
-    <div>
-      <table class="table table-bordered table-secondary" id="input">
-        <thead>
-          <tr>
-            <th scope="col">Nom Document</th>
-            <th scope="col">Date</th>
-            <th scope="col">Consulté</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="file in files" :key="file.name">
-            <td>
-              <a :href="`http://localhost:3000/api/documents/serveDocument/${file.id_Documents}`" target="_blank">{{ file.file_name }}</a>
-            </td>
-            <td>{{ file.date }}</td>
-            
-            <td>Non</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <div id="dossier">
+          <h5 >Dossier de: {{ nomClient }}</h5>
+        </div>
 
 
-    <div>
-      <button id="add" class="btn btn-dark btn-sm" @click="openForm">Ajouter une proposition</button>
-    </div>
+        <br>
 
-    <div>
-      <table class="table table-bordered table-secondary" id="secondTable">
-        <thead>
-          <tr>
-            <th scope="col">Nom Banque</th>
-            <th scope="col">Taux</th>
-            <th scope="col">Date</th>
-            <th scope="col">Décision</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="bank in banks" :key="bank.id">
-            <td>{{ bank.name }}</td>
-            <td>{{ bank.taux }}</td>
-            <td>{{ bank.date }}</td>
-            <td>Non</td>
-            <td>
-              <button class="btn btn-dark btn-sm" @click="deleteBank(bank)">Retirer</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <button id="send" class="btn btn-dark btn-sm" >Envoyer</button>
-    </div>
+        <div>
+          <table class="table table-bordered table-secondary" id="input">
+            <thead>
+              <tr>
+                <th scope="col">Nom Document</th>
+                <th scope="col">Date</th>
+                <th scope="col">Consulté</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="file in files" :key="file.name">
+                <td>
+                  <a :href="`http://localhost:3000/api/documents/serveDocument/${file.id_Documents}`" target="_blank">{{ file.file_name }}</a>
+                </td>
+                <td>{{ file.date }}</td>
+                
+                <td>Non</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-    <div class="modal" :class="{ 'show': showForm }">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Ajouter une proposition</h5>
-          </div>
-          <div class="modal-body">
-            <form @submit.prevent="addBank">
-              <div class="mb-3">
-                <label for="bankName" class="form-label">Nom Banque</label>
-                <input type="text" class="form-control" id="bankName" v-model="bankName" required>
+
+        <div>
+          <button id="add" class="btn btn-dark btn-sm" @click="openForm">Ajouter une proposition</button>
+        </div>
+
+        <div>
+          <table class="table table-bordered table-secondary" id="secondTable">
+            <thead>
+              <tr>
+                <th scope="col">Nom Banque</th>
+                <th scope="col">Taux</th>
+                <th scope="col">Date</th>
+                <th scope="col">Décision</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="bank in banks" :key="bank.id">
+                <td>{{ bank.name }}</td>
+                <td>{{ bank.taux }}</td>
+                <td>{{ bank.date }}</td>
+                <td>Non</td>
+                <td>
+                  <button class="btn btn-dark btn-sm" @click="deleteBank(bank)">Retirer</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button id="send" class="btn btn-dark btn-sm" >Envoyer</button>
+        </div>
+
+        <div class="modal" :class="{ 'show': showForm }">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Ajouter une proposition</h5>
               </div>
-              <div class="mb-3">
-                <label for="bankRate" class="form-label">Taux</label>
-                <input type="text" class="form-control" id="bankRate" v-model="bankRate" required>
+              <div class="modal-body">
+                <form @submit.prevent="addBank">
+                  <div class="mb-3">
+                    <label for="bankName" class="form-label">Nom Banque</label>
+                    <input type="text" class="form-control" id="bankName" v-model="bankName" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="bankRate" class="form-label">Taux</label>
+                    <input type="text" class="form-control" id="bankRate" v-model="bankRate" required>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-dark" id="ajouter">Ajouter</button>
+                    <button type="button" class="btn btn-dark " @click="showForm = false">Annuler</button>
+                  </div>
+                </form>
               </div>
-              <div class="modal-footer">
-                <button type="submit" class="btn btn-dark" id="ajouter">Ajouter</button>
-                <button type="button" class="btn btn-dark " @click="showForm = false">Annuler</button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
+
+
+        <div class="input" >
+          <div class="mb-3">
+            <label for="formFile" class="form-label"></label>
+            <input class="form-control" type="file" id="formFile" ref="fileInput" style="display: none;" @change="submitFile">
+            <button id="envoyer" class="btn btn-dark btn-sm" @click="openFileInput">Ajouter un document</button>
+          </div>
+        </div> 
+
+        <div>
+          <table class="table table-bordered table-secondary" id="input">
+            <thead>
+              <tr>
+                <th scope="col">Nom Document</th>
+                <th scope="col">Date</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="file in files" :key="file.name">
+                <td @click="displayDocument(file.name)">{{ file.name }}</td>
+                <td>{{ file.date }}</td>
+                <td>
+                  <button class="btn btn-dark btn-sm" @click="deleteFile(file)">Retirer</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button id="send2" class="btn btn-dark btn-sm" >Envoyer</button>
+        </div> 
+
+      
+
     </div>
 
+    <div class ="div1">
 
-    <!-- <div class="input" >
-      <div class="mb-3">
-        <label for="formFile" class="form-label"></label>
-        <input class="form-control" type="file" id="formFile" ref="fileInput" style="display: none;" @change="submitFile">
-        <button id="envoyer" class="btn btn-dark btn-sm" @click="openFileInput">Ajouter un document</button>
+      <h3>Stade d'avancement: </h3>
+      <div class="progress" style="width: 50%; margin-left: auto; margin-right: auto;">
+        <div class="progress-bar progress-bar-consulted" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="75" :style="{ width: progress1 + '%' }">Consulté</div>
+        <div class="progress-bar progress-bar-send" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="75" :style="{ width: progress2 + '%' }">Envoyé</div>
+        <div class="progress-bar progress-bar-done" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="75" :style="{ width: progress3 + '%' }">Terminé</div>
       </div>
-    </div> -->
 
-    <!-- <div>
-      <table class="table table-bordered table-secondary" id="input">
-        <thead>
-          <tr>
-            <th scope="col">Nom Document</th>
-            <th scope="col">Date</th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="file in files" :key="file.name">
-            <td @click="displayDocument(file.name)">{{ file.name }}</td>
-            <td>{{ file.date }}</td>
-            <td>
-              <button class="btn btn-dark btn-sm" @click="deleteFile(file)">Retirer</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <button id="send" class="btn btn-dark btn-sm" >Envoyer</button>
-    </div> -->
+      <div class="btn">
+          <button type="button" class="btn btn-dark btn-sm " @click="Consulted" >Consulté</button>
+          <span style="margin: 0 10px;"></span>
+          <button type="button" class="btn btn-dark btn-sm " @click="Send" >Envoyé</button>
+          <span style="margin: 0 10px;"></span>
+          <button type="button" class="btn btn-dark btn-sm" @click="Done" >Terminé</button>
+      </div>
 
-   
+      <div class="mb-3" style="padding-top: 5%; width: 30%; display: block; margin-left: auto; margin-right: auto;">
+        
+        <textarea class="form-control"  rows="8" placeholder="Chat" style="border: 4px solid #2A2D34; "></textarea>
+        <button id="but" type="button" class="btn btn-outline-dark">Envoyer</button>
+        
+      </div>
 
+    </div>
   </div>
-
-<div class ="div1">
-
-<h3>Stade d'avancement: </h3>
-<div class="progress" style="width: 50%; margin-left: auto; margin-right: auto;">
-  <div class="progress-bar progress-bar-consulted" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="75" :style="{ width: progress1 + '%' }">Consulté</div>
-  <div class="progress-bar progress-bar-send" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="75" :style="{ width: progress2 + '%' }">Envoyé</div>
-  <div class="progress-bar progress-bar-done" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="75" :style="{ width: progress3 + '%' }">Terminé</div>
-</div>
-
-<div class="btn">
-    <button type="button" class="btn btn-dark btn-sm " @click="Consulted" >Consulté</button>
-    <span style="margin: 0 10px;"></span>
-    <button type="button" class="btn btn-dark btn-sm " @click="Send" >Envoyé</button>
-    <span style="margin: 0 10px;"></span>
-    <button type="button" class="btn btn-dark btn-sm" @click="Done" >Terminé</button>
-</div>
-
-<div class="mb-3" style="padding-top: 5%; width: 30%; display: block; margin-left: auto; margin-right: auto;">
-  
-  <textarea class="form-control"  rows="8" placeholder="Chat" style="border: 4px solid #2A2D34; "></textarea>
-  <button id="but" type="button" class="btn btn-outline-dark">Envoyer</button>
-  
-</div>
-
-</div>
-</div>
 </template>
 
 <script>
@@ -351,6 +351,15 @@ export default
   margin-bottom: 10px;
 }
 
+#send2{
+  background-color: #588B8B;
+  color: black;
+  border-radius: 10px;
+  float: right;
+  margin-top: 13px;
+  margin-bottom: 10px;
+}
+
 #envoyer {
   background-color: #E9C46A;
   color: black;
@@ -495,7 +504,7 @@ h3{
   margin-left: 60%; 
   margin-right: 60%;
   margin-top: 7%;
-  margin-bottom: 7%;
+  margin-bottom: 30%;
   width: 35%;
 }
 
@@ -512,6 +521,11 @@ h3{
   width: 90%
 }
 
+#input{
+  margin-top: 10px;
+  margin-bottom: auto;
+
+}
 
 </style>
 
