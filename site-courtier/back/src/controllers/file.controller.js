@@ -3,16 +3,42 @@ import Dossier from '../models/Dossier.js';
 import User from "../models/User.js";
 
 
+// export const getUserDocuments = async (req, res) => {
+//     const { dossierId } = req.query;
+//     try {
+//       const documents = await Document.findAll({ where: { Id_Dossier: dossierId } });
+//       res.json(documents);
+//     } catch (err) {
+//       console.log(err);
+//       res.json({ success: false, message: 'Error al obtener los documentos del usuario', error: err });
+//     }
+//   };
+
 export const getUserDocuments = async (req, res) => {
-    const { dossierId } = req.query;
-    try {
-      const documents = await Document.findAll({ where: { Id_Dossier: dossierId } });
+  const { dossierId } = req.query;
+  try {
+      const documents = await Document.findAll({
+          where: { Id_Dossier: dossierId },
+          include: [
+              {
+                  model: Dossier,
+                  as: 'Dossier', // este asume que has definido este alias en tu modelo Dossier
+                  include: [
+                      {
+                          model: User,
+                          as: 'User' // este asume que has definido este alias en tu modelo User
+                      }
+                  ]
+              }
+          ]
+      });
       res.json(documents);
-    } catch (err) {
+  } catch (err) {
       console.log(err);
       res.json({ success: false, message: 'Error al obtener los documentos del usuario', error: err });
-    }
-  };
+  }
+};
+
 
 export const serveDocument = async (req, res) => {
     try {

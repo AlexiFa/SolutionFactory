@@ -58,7 +58,7 @@ export default
   <div class="div2">
 
     <div id="dossier">
-      <h5>Dossier de:</h5>
+      <h5 >Dossier de: {{ nomClient }}</h5>
     </div>
 
 
@@ -79,6 +79,7 @@ export default
               <a :href="`http://localhost:3000/api/documents/serveDocument/${file.id_Documents}`" target="_blank">{{ file.file_name }}</a>
             </td>
             <td>{{ file.date }}</td>
+            
             <td>Non</td>
           </tr>
         </tbody>
@@ -221,9 +222,12 @@ export default
     banks: [],
     showForm: false,
     bankName: '',
-    bankRate: ''
+    bankRate: '',
+    nomClient: ''
+    
     
   }},
+  
 
   name: 'CDossier',
   components: {
@@ -232,9 +236,15 @@ export default
   
   async created() {
     const dossierId = this.$route.params.dossierId;
+
   try {
         const response = await axios.get(`http://localhost:3000/api/documents/userDocuments?dossierId=${dossierId}`);
         this.files = response.data;
+        if (this.files.length > 0) {
+          
+        this.nomClient = this.files[0].Dossier.User.nom;
+      }
+        console.log(response.data)
       } catch (error) {
         console.log(error);
       }
