@@ -91,7 +91,7 @@
       
     }},
 
-    name: 'CDossier',
+    name: 'UDossier',
     components: {
          
     },
