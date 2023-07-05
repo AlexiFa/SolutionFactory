@@ -7,13 +7,16 @@
       <div v-for="item in items" :key="item.id">
       <div name="Dossier-Client" class="dossier-client">
         <div style="width:30%;">
-            <DCardClient :dossier="item"/>
+            <!-- <DCardClient :dossier="item"/> -->
+            <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content:space-between; height:100%;">
+            <h3 style="margin-top: 10%;">Client: {{ item.User.nom }}  </h3><p></p>
+        </div>
         </div> 
         <div style="width:30%;">
             <DCardSuivi></DCardSuivi>
         </div>
         <!-- cette carte ci-dessous est le futur-bouton vers le dossier detaillé-->
-        <div class="btn dossier-details" role="button" @click="$router.push({ name: 'CDossier', params: { dossierId: item.Id_Dossier } })">
+        <div class="btn dossier-details" role="button" @click="$router.push({ name: 'CDossier', params: { dossierId: item.Id_Dossier, nom: item.User.nom } })">
             <DCardContent></DCardContent>
         </div>
       </div>
@@ -24,17 +27,19 @@
 <script>
   // @ is an alias to /src
   import DCardSuivi from '@/components/Dashboard/DCardSuivi.vue'
-  import DCardClient from '@/components/Dashboard/DCardClient.vue'
+  // import DCardClient from '@/components/Dashboard/DCardClient.vue'
   import DCardContent from '@/components/Dashboard/DCardContent.vue'
   import axios from 'axios'
   export default {
     name: 'CDashboard',
+  
     components: {
-      DCardSuivi, DCardClient, DCardContent
+      DCardSuivi, DCardContent
     },
     data() {
       return {
-        items: []
+        items: [],
+        
       }
     },
     mounted() {
