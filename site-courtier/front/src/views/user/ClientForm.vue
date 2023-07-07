@@ -157,6 +157,12 @@ export default {
                 });
                 const data = await response.json();
                 console.log(data);
+                alert('Dossier envoyé')
+                setTimeout(() => {
+                    window.location.reload();        
+                }, 300);
+                
+
             } catch (error) {
                 console.error('Error:', error);
             }

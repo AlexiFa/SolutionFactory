@@ -193,6 +193,8 @@ export default
           <button type="button" class="btn btn-dark btn-sm " @click="Send" >Envoyé</button>
           <span style="margin: 0 10px;"></span>
           <button type="button" class="btn btn-dark btn-sm" @click="Done" >Terminé</button>
+          <span style="margin: 0 10px;"></span>
+          <button type="button" class="btn btn-dark btn-sm" @click="Reset" >Reset</button>
       </div>
 
       <div class="mb-3" style="padding-top: 5%; width: 30%; display: block; margin-left: auto; margin-right: auto;">
@@ -259,6 +261,11 @@ export default
     },
     Done() {
       this.progress3 = 60;
+    },
+    Reset(){
+      this.progress1 = 0;
+      this.progress2 = 0;
+      this.progress3 = 0;
     },
     openFileInput() {
       const input = this.$refs.fileInput;
